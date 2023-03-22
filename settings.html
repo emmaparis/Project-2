@@ -59,6 +59,22 @@
   
   <script>
     // Add your JavaScript code for the settings page functionality here
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const customTodoForm = document.getElementById('custom-todo-form');
+  const recurringTodoForm = document.getElementById('recurring-todo-form');
+
+  customTodoForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById('custom-todo-title').value;
+    const emoji = document.getElementById('custom-todo-emoji').value;
+    const note = document.getElementById('custom-todo-note').value;
+
+    // Save the custom to-do with emoji and note to the database
+    saveCustomTodoToDatabase(title, emoji, note);
+  });
+
   </script>
 </body>
 
