@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life Log</title>
     <!-- Uncomment this line to use the reset included  -->
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
-    <!-- <link rel="icon" href="" type="image/icon type" /> -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="assets/images/logoFiller.png" type="image/icon type" />
 
     <!-- Add CSS Framework Link Here  -->
     <link
@@ -23,36 +23,87 @@
 
     <!-- Load fonts here -->
   </head>
-  <body class="has-backgroud-info" style="background-color: #143d5e" >
-    <hero class="hero is-primary is-small" style="background-color: #3f145e">
+  <body class="has-backgroud-info" style="background-color: #edda84" >
+    <!-- <hero class="hero is-primary is-small" style="background-color: #1e8625d5">
       <header class="hero-body">
-        <figure
-          class="image is-128x128 mr-5 is-flex is-align-items-center is-flex-wrap-wrap"
-          style="float: left"
-        >
-          <img class="is-rounded" src="" />
-        </figure>
-        <h1 class="is-size-1 is-flex is-align-items-center is-flex-wrap-wrap" id="">
-          Life Log
-        </h1>
-        <p class="subtitle" id="date-time">Date & Time will go here</p>
-        <nav
-          class="navbar"
-          role="navigation"
-          aria-label="main navigation"
-          
-        >
-          <div class="navbar-brand" >
-            <a
-              class="navbar-item"
-              href=""
-              > <img src="" alt=""></a
-            >
-            <a class="navbar-item" href=""><img src="" alt=""></a>
-          </div>
-        </nav>
+        <section class="is-flex-direction-row is-justify-content-center">
+            <container  class="is-flex-direction-row is-justify-content-center">
+                <div class="columns is-centered">
+                    <figure class="image is-128x128 is-align-items-center is-flex-wrap-wrap">
+                        <img class="is-rounded" src="assets/images/logoFiller.png" />
+                    </figure>
+                    <h1 class="is-size-1 mt-5">Life Log</h1>
+                </div>
+            </container>
+            <h2 class="subtitle columns is-centered has-text-center is-align-items-center" style="position:relative">Live. Laugh. Log Life.</h2>
+        </section>
+        <p id="date-time" class="has-text-left" style="position:absolute; ">Date & Time will go here</p>
       </header>
     </hero>
+     -->
+
+
+    <section class="hero is-primary is-small">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    Login
+                  </a>
+                  <a class="navbar-item">
+                    Settings
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class="columns is-centered">
+                <figure class="image is-128x128 is-align-items-center is-flex-wrap-wrap">
+                    <img class="is-rounded" src="assets/images/logoFiller.png" />
+                </figure>
+            </div>
+            <p class="title">
+              Life Log
+            </p>
+            <p class="subtitle">
+                Live. Laugh. Life Log.
+            </p>
+          </div>
+        </div>
+      
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+          <nav class="tabs">
+            <div class="container">
+              <ul>
+                <li class="is-active"><a>Overview</a></li>
+                <li><a>Home</a></li>
+                <li><a>Login</a></li>
+                <li><a>Settings</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+
     <main class="section is-vcentered">
      
     </main>
