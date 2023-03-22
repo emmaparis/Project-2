@@ -1,8 +1,8 @@
-/*const User = require('./User');
+const User = require('./User');
 
 // PUT RELATIONSHIPS HERE
 
-module.exports = { User };*/
+module.exports = { User };
 
 // EXAMPLE RELATIONSHIPS
 
