@@ -1,20 +1,90 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Test</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Log</title>
+    <!-- Uncomment this line to use the reset included  -->
+    <link rel="stylesheet" href="public/css/jass.css" />
+    <link rel="icon" href="public/images/logoFiller.png" type="image/icon type" />
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        Test Deployment
-      </h1>
-    </header>
-      <main class="container container-fluid mt-5">
+    <!-- Add CSS Framework Link Here  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Load fonts here -->
+  </head>
+  <body class="has-backgroud-info" style="background-color: #edda84" >
+    <section class="hero is-primary is-small has-text-dark">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    Login
+                  </a>
+                  <a class="navbar-item">
+                    Settings
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body ">
+          <div class="container has-text-centered">
+            <div class="columns is-centered">
+                <figure class="image is-128x128 is-align-items-center is-flex-wrap-wrap">
+                    <img class="is-rounded" src="public/images/logoFiller.png" />
+                </figure>
+            </div>
+            <p class="title is-size-1 has-text-dark">
+              Life Log
+            </p>
+            <p class="subtitle is-size-4 has-text-grey-dark">
+                Live. Laugh. Life Log.
+            </p>
+            <p id="date-time" class="has-text-left is-size-4" style="position:fixed; top:15px;">Date & Time will go here</p>
+          </div>
+        </div>
+      </section>
+
+    <main class="container container-fluid mt-5">
         {{{ body }}}
-      </main>
-  </div>
-  </body>
+    </main>
 
+    <!-- Page Footer -->
+    <footer class="footer p-4" style="background-color: #00d1b2">
+        <div class="content is-primary has-text-centered m-0 p-0 ">
+            <p>Thank you for using Life Log!<br> ©2023 Project2.Group1. | All Rights Reserved <br> Made with love by Emma Paris❤️, Liza Parr❤️, Joseph Reis❤️, Tatiana Castro❤️, David Keim❤️, and Shannya Niveyro🐼.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+    <!-- <script src=""></script> --> 
+  </body>
 </html>
