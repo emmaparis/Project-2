@@ -74,6 +74,25 @@
     // Save the custom to-do with emoji and note to the database
     saveCustomTodoToDatabase(title, emoji, note);
   });
+  
+  recurringTodoForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById('recurring-todo-title').value;
+    const days = Array.from(document.getElementById('recurring-todo-days').selectedOptions).map(option => option.value);
+
+    // Save the recurring to-do with days to the database
+    saveRecurringTodoToDatabase(title, days);
+  });
+});
+
+function saveCustomTodoToDatabase(title, emoji, note) {
+  // Implement the logic for saving the custom to-do with emoji and note to the database using SQL
+}
+
+function saveRecurringTodoToDatabase(title, days) {
+  // Implement the logic for saving the recurring to-do with days to the database using SQL
+}
 
   </script>
 </body>
