@@ -15,9 +15,14 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+<<<<<<< HEAD
     "foundation-sites": "^6.7.5",
+=======
+    "express-session": "^1.17.1",
+>>>>>>> 05649ce3aa862675cc564b32d70d4699ac83dd6e
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "connect-session-sequelize": "^7.0.4"
   },
   "description": ""
 }
