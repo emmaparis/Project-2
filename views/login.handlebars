@@ -1,5 +1,8 @@
 <div class="log-in">
     <h2>Log In</h2>
+    {{#if loggedIn}}
+    {{> logged-message}}
+    {{/if}}
     <form class="login-form">
         <div class="form-group">
             <label for="email-login">Email:</label>
@@ -14,3 +17,5 @@
         </div>
     </form>
 </div>
+
+<script src="/js/login.js"></script>
