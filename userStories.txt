@@ -1,0 +1,4 @@
+Life Log: as a <person> I want a <personalized to do app> so that <I can be less repetitive when making my lists>
+LIFE LAUGH LIFE LOG
+Lift Log: as a <gym goer> I want a <personalized lift app> so that <so I can log my progress & gym history>
+as a <gamer> I want a <game> so that <so I can tap notes to a rhythm>

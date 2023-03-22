@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Life Log - Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha384-ogmFxjqiOM+1riV4GkUZZm+cJMGM_ws3lutvk4g7uAz5B2kZlkw5k5l5X5PDo5H/" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha384-WDAgBz7wrzFNxM66zO2WALchl8Yv7VfLbRTDgkVhjJ8eh67tVJZtTNDT7r/xE8oN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-VDmj7ofGfeFfIXWfCcpum5eafACoVU6rFBT6DnGl6GIfT6rVDhZoe2q1fjDq3QGSDH0mW8jkwg+6E/z/6RIVRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <!-- Add your HTML code for the settings page here -->
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell">
+        <h1>Settings</h1>
+      </div>
+    </div>
+  
+    <div class="grid-x grid-padding-x">
+      <div class="cell medium-6">
+        <h2>Custom To-Do's</h2>
+        <form id="custom-todo-form">
+          <label for="custom-todo-title">Title:</label>
+          <input type="text" id="custom-todo-title" required>
+          <label for="custom-todo-emoji">Emoji:</label>
+          <input type="text" id="custom-todo-emoji" required>
+          <label for="custom-todo-note">Note:</label>
+          <textarea id="custom-todo-note"></textarea>
+          <button type="submit" class="button">Save Custom To-Do</button>
+        </form>
+      </div>
+      <div class="cell medium-6">
+        <h2>Recurring To-Do's</h2>
+        <form id="recurring-todo-form">
+          <label for="recurring-todo-title">Title:</label>
+          <input type="text" id="recurring-todo-title" required>
+          <label for="recurring-todo-days">Days:</label>
+          <select id="recurring-todo-days" multiple>
+          <option value="0">Sunday</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="workdays">Workdays (Monday-Friday)</option>
+          <option value="everyday">Everyday</option>
+          </select>
+          <button type="submit" class="button">Save Recurring To-Do</button>
+          </form>
+          </div>
+          
+            </div>
+          </div>
+  
+  <script>
+    // Add your JavaScript code for the settings page functionality here
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const customTodoForm = document.getElementById('custom-todo-form');
+  const recurringTodoForm = document.getElementById('recurring-todo-form');
+
+  customTodoForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById('custom-todo-title').value;
+    const emoji = document.getElementById('custom-todo-emoji').value;
+    const note = document.getElementById('custom-todo-note').value;
+
+    // Save the custom to-do with emoji and note to the database
+    saveCustomTodoToDatabase(title, emoji, note);
+  });
+  
+  recurringTodoForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById('recurring-todo-title').value;
+    const days = Array.from(document.getElementById('recurring-todo-days').selectedOptions).map(option => option.value);
+
+    // Save the recurring to-do with days to the database
+    saveRecurringTodoToDatabase(title, days);
+  });
+});
+
+function saveCustomTodoToDatabase(title, emoji, note) {
+  // Implement the logic for saving the custom to-do with emoji and note to the database using SQL
+}
+
+function saveRecurringTodoToDatabase(title, days) {
+  // Implement the logic for saving the recurring to-do with days to the database using SQL
+}
+
+  </script>
+</body>
+
+</html>
