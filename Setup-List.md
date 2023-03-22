@@ -29,9 +29,10 @@ Set up JawsDB
 Seed database on Heroku
 * heroku run npm run seed
 
-Todo.js (model) - id text isChecked user_id
-todoData.json
-update seed.js to run the seed data
-todos-view.handlebars with todo display
-add event listener, delete event listener etc. in public/js
-todosRoutes.js
+Note To Do List
+* Todo.js (model) - id text isChecked user_id
+* todoData.json
+* update seed.js to run the seed data
+* todos-view.handlebars with todo display
+* add event listener, delete event listener etc. in public/js
+* todosRoutes.js
