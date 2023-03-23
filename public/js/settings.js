@@ -10,4 +10,6 @@ savedTodos.push({ item: todoItem, frequency: frequency });
 localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
 
   });
+
+//   invoke post route by making new to do 
   
