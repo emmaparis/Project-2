@@ -67,48 +67,42 @@
             <p class="subtitle is-size-4 has-text-grey-dark">
                 Live. Laugh. Life Log.
             </p>
-            <p id="date-time" class="has-text-left is-size-4" style="position:fixed; top:15px;">Date & Time will go here</p>
+            <p id="date-time" class="has-text-left is-size-4" style="position:relative; bottom:400px;">Date & Time will go here</p>
           </div>
         </div>
       </section>
 
     <main class="section is-vcentered">
-
+  <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
         <div class="columns">
-            <div class="column is-one-third card mr-3">
+            <div class="column is-one-third card mr-3" style="height: 70vh">
                 <header class="card-header" style="background-color: #00d1b2">
                     Today's To Do's
                   </p></header>
                   <div class="card-content">
                   <div class="content">
-                    <label class="checkbox">
+                    <!-- <label class="checkbox">
                         <input type="checkbox">
                         <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
+                      </label><br> -->
+                      <!-- <input  type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> <input class="input is-primary " type="text" placeholder="Primary input"></label><br><br>
+                             <input type="submit" value="Submit"> -->
+                             <div class="field has-addons has-addons-centered">
+                                <p class="control">
+                                    <label class="checkbox" >
+                                        <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                                    </label>
+                                </p>
+                                <p class="control">
+                                  <input class="input" style='width: 400px; height: 40px; ' type="text" placeholder="Enter to-do.">
+                                </p>
+                                <p class="control">
+                                  <a class="button is-primary">
+                                    Add
+                                  </a>
+                                </p>
+                              </div>
                   </div>
                 </div>
               </div>
@@ -134,7 +128,8 @@
             </div>
             </div>
           </div>
-     
+          
+       <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
     </main>
 
     <!-- Page Footer -->
