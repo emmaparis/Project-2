@@ -1,15 +1,35 @@
-document.getElementById('settings-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+// Save the todo item and selected days
+async function saveTodo() {
+    const todoItem = document.querySelector('#todo-item').value.trim();
+    const sunday = document.querySelector('#sunday').checked;
+    const monday = document.querySelector('#monday').checked;
+    const tuesday = document.querySelector('#tuesday').checked;
+    const wednesday = document.querySelector('#wednesday').checked;
+    const thursday = document.querySelector('#thursday').checked;
+    const friday = document.querySelector('#friday').checked;
+    const saturday = document.querySelector('#saturday').checked;
   
-    const todoItem = document.getElementById('todo-item').value;
-    const frequency = document.getElementById('frequency').value;
+    if (todoItem && (sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
+      const response = await fetch('/api/todos', {
+        method: 'POST',
+        body: JSON.stringify({
+          todo_item: todoItem,
+          sunday,
+          monday,
+          tuesday,
+          wednesday,
+          thursday,
+          friday,
+          saturday,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
   
-    // Save settings to localStorage
-const savedTodos = JSON.parse(localStorage.getItem('savedTodos')) || [];
-savedTodos.push({ item: todoItem, frequency: frequency });
-localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
-
-  });
-
-//   invoke post route by making new to do 
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert('Failed to save todo item.');
+      }
+    }
+  }
   
