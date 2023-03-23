@@ -29,7 +29,34 @@
 
 {{!-- body --}}
 <div class="columns">
-  <div class="column is-one-fifth">key words</div>
-  <div class="column">To Do Items</div>
-  <div class="column">Frequency</div>
+  <div class="column is-full">
+    <h1 class="title">Settings</h1>
+    <form id="settings-form">
+      <div class="field">
+        <label class="label">To Do Item</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Enter to-do item" id="todo-item">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Frequency</label>
+        <div class="control">
+          <div class="select">
+            <select id="frequency">
+              <option value="">Select frequency</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" type="submit">Save Settings</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+<script src="/js/settings.js"></script>
