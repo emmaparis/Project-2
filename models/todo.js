@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Todos extends Model {}
 
-Todo.init(
+Todos.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,6 +14,18 @@ Todo.init(
     todo_item: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    is_checked: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: "user",
+            key: "id",
+        },
     },
   },
   {

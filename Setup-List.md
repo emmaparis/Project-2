@@ -36,3 +36,4 @@ Note To Do List
 * todos-view.handlebars with todo display
 * add event listener, delete event listener etc. in public/js
 * todosRoutes.js
+* Set integration of settings
