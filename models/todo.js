@@ -1,15 +1,29 @@
-const express = require("express");
-const sequelize =  = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
+class Todos extends Model {}
 
-// DATA
-const todos = require("./todos.json");
+Todo.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    todo_item: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'todo',
+  }
+);
 
-// app/port
-const app = express();
-const PORT = process.env.PORT || 3001;
+module.exports = Todos;
 
-
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
 
