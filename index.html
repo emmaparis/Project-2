@@ -24,7 +24,7 @@
     <!-- Load fonts here -->
   </head>
   <body class="has-backgroud-info" style="background-color: #edda84" >
-    <section class="hero is-primary is-small has-text-dark">
+    <section class="hero is-primary is-small has-text-dark" style="height:300px">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
           <nav class="navbar">
@@ -38,13 +38,13 @@
               </div>
               <div id="navbarMenuHeroA" class="navbar-menu">
                 <div class="navbar-end">
-                  <a class="navbar-item is-active">
+                  <a class="navbar-item is-active is-size-4">
                     Home
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item is-size-4">
                     Login
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item is-size-4">
                     Settings
                   </a>
                 </div>
@@ -67,74 +67,191 @@
             <p class="subtitle is-size-4 has-text-grey-dark">
                 Live. Laugh. Life Log.
             </p>
-            <p id="date-time" class="has-text-left is-size-4" style="position:fixed; top:15px;">Date & Time will go here</p>
           </div>
+          <p id="date-time" class="has-text-left is-size-4" style="position:relative; left:20px; top:-280px;">Date & Time will go here</p>
         </div>
       </section>
 
     <main class="section is-vcentered">
-
+  <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
         <div class="columns">
-            <div class="column is-one-third card mr-3">
-                <header class="card-header" style="background-color: #00d1b2">
-                    Today's To Do's
-                  </p></header>
+            <div class="column is-one-third card mr-3" style="min-height: 70vh">
+                <header class="card-header is-size-2" style=" background-color: #00d1b2; text-align: center;">
+                    <strong>Today's To Dos</strong>
+                    <button class="button is-size-4 is-primary"><strong>+</strong></button>
+                </header>
                   <div class="card-content">
                   <div class="content">
-                    <label class="checkbox">
+                    <!-- <label class="checkbox">
                         <input type="checkbox">
                         <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <input class="input is-primary" type="text" placeholder="Primary input">
-                      </label>
+                      </label><br> -->
+                      <!-- <input  type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                            <label for="vehicle3"> <input class="input is-primary " type="text" placeholder="Primary input"></label><br><br>
+                             <input type="submit" value="Submit"> -->
+                             <div class=" field is-flex-direction-row has-addons has-addons-centered" >
+                                <p class="control is-fullwidth">
+                                    <label class="checkbox" >
+                                        <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                                    </label>
+                                </p>
+                                <p class="control">
+                                  <input class=" is-fullwidth input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                                </p>
+                                <p class="control">
+                                  <a class="button has-background-danger remove" style='width: 70px'>
+                                        <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                                  </a>
+                                </p>
+                              </div>
+
+
+                              <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                                <p class="control">
+                                    <label class="checkbox" >
+                                        <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                                    </label>
+                                </p>
+                                <p class="control">
+                                  <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                                </p>
+                                <p class="control">
+                                  <a class="button has-background-danger remove" style='width: 70px'>
+                                        <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                                  </a>
+                                </p>
+                              </div>
+                              
+                              <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                                <p class="control">
+                                    <label class="checkbox" >
+                                        <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                                    </label>
+                                </p>
+                                <p class="control">
+                                  <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                                </p>
+                                <p class="control">
+                                  <a class="button has-background-danger remove" style='width: 70px'>
+                                        <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                                  </a>
+                                </p>
+                              </div>
+
+
+                              <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                                <p class="control">
+                                    <label class="checkbox" >
+                                        <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                                    </label>
+                                </p>
+                                <p class="control">
+                                  <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
+                                </p>
+                                <p class="control">
+                                  <a class="button has-background-primary add" style='width: 70px'>
+                                        <img src="public/images/add.png" style="width:25px;height:25px;" />
+                                  </a>
+                                </p>
+                              </div>
+                              
+           
                   </div>
                 </div>
               </div>
             <div class="column card">
-                <header class="card-header" style="background-color: #00d1b2">
-                      Component
-                    </p></header>
+                <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
+                      <strong>Expansion</strong>
+                      <button class="button is-size-5 is-primary"><strong>+</strong></button>
+                </header>
                 <div class="card-content">
                     <br>
                   <div class="content">
-                    <textarea class="textarea is-primary" placeholder="Primary textarea"></textarea>
+                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                      <p class="control">
+                          <label class="checkbox" >
+                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                          </label>
+                      </p>
+                      <p class="control">
+                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                      </p>
+                      <p class="control">
+                        <a class="button has-background-danger remove" style='width: 70px'>
+                              <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                        </a>
+                      </p>
+                    </div>
+
+
+                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                      <p class="control">
+                          <label class="checkbox" >
+                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                          </label>
+                      </p>
+                      <p class="control">
+                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                      </p>
+                      <p class="control">
+                        <a class="button has-background-danger remove" style='width: 70px'>
+                              <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                        </a>
+                      </p>
+                    </div>
+                    
+                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                      <p class="control">
+                          <label class="checkbox" >
+                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                          </label>
+                      </p>
+                      <p class="control">
+                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+                      </p>
+                      <p class="control">
+                        <a class="button has-background-danger remove" style='width: 70px'>
+                              <img src="public/images/remove.png" style="width:25px;height:25px;" />
+                        </a>
+                      </p>
+                    </div>
+
+
+                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                      <p class="control">
+                          <label class="checkbox" >
+                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                          </label>
+                      </p>
+                      <p class="control">
+                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
+                      </p>
+                      <p class="control">
+                        <a class="button has-background-primary remove" style='width: 70px'>
+                              <img src="public/images/add.png" style="width:25px;height:25px;" />
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             <div class="column card ml-3">
-                <header class="card-header" style="background-color: #00d1b2">
-                    Calendar
-                  </p></header>
+                <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
+                    <strong>Progress Tracker</strong> 
+                </header>
                   <div class="card-content">
                 <div class="content">
-                Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                <p class="is-size-3 has-text-centered"> <strong>Congratulations!</strong> <br> You're almost there!</p>
+                 <figure class="image is-256x256 is-align-items-center is-flex-wrap-wrap">
+                <img src="public/images/koot.png" class= "is-rounded" />
+                  </figure>
+                  <button class="button is-primary is-size-5 is-fullwidth has-text-dark">View Past Progress</button>
                 </div>
             </div>
             </div>
           </div>
-     
+          
+       <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
     </main>
 
     <!-- Page Footer -->
