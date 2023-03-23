@@ -1,3 +1,4 @@
+{{#each toDoData as |todo|}}
 <div class=" field is-flex-direction-row has-addons has-addons-centered" >
     <p class="control is-fullwidth">
         <label class="checkbox" >
@@ -5,7 +6,9 @@
         </label>
     </p>
     <p class="control">
-        <input class=" is-fullwidth input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+        <div class=" is-fullwidth input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; '>
+            <p>{{todo.todo_item}}</p>
+        </div>
     </p>
     <p class="control">
         <a class="button has-background-danger remove" style='width: 70px'>
@@ -13,3 +16,4 @@
         </a>
     </p>
 </div>
+{{/each}}
