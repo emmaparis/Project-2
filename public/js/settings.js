@@ -49,5 +49,13 @@ async function saveTodo() {
   
   document.querySelector('#save-todo').addEventListener('click', saveTodo);
   
+// Add event listeners for delete buttons
+document.querySelectorAll('.delete-btn').forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const id = event.target.getAttribute('data-id');
+      deleteTodo(id);
+    });
+  });
+  
   
   
