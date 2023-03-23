@@ -33,3 +33,21 @@ async function saveTodo() {
     }
   }
   
+  // Delete a todo item
+  async function deleteTodo(id) {
+    const response = await fetch(`/api/todos/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to delete todo item.');
+    }
+  }
+  
+  document.querySelector('#save-todo').addEventListener('click', saveTodo);
+  
+  
+  
