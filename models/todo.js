@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Todos extends Model {}
 
-Todo.init(
+Todos.init(
   {
     id: {
       type: DataTypes.INTEGER,
