@@ -4,8 +4,10 @@ document.getElementById('settings-form').addEventListener('submit', function (ev
     const todoItem = document.getElementById('todo-item').value;
     const frequency = document.getElementById('frequency').value;
   
-    // Save settings and perform necessary operations
-    console.log('To Do Item:', todoItem);
-    console.log('Frequency:', frequency);
+    // Save settings to localStorage
+const savedTodos = JSON.parse(localStorage.getItem('savedTodos')) || [];
+savedTodos.push({ item: todoItem, frequency: frequency });
+localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
+
   });
   
