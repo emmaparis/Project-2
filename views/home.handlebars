@@ -110,21 +110,32 @@
           </div>
           {{/if}}
 
-<h1 class=" is-size-1 title has-text-centered">Welcome!</h1>
-{{!-- <figure class="image is-3by2 is-align-items-center is-flex-wrap-wrap">
-  <img class="is-rounded" src="/images/pp.jpeg" />
-</figure> --}}
- <figure class="image is-align-items-center" >
-  <img class="  is-rounded" src="/images/welcome.png" />
-</figure> 
+     <section class="columns card m-5 p-5 ">
+      <div class="column is-one-third ">
+        <figure class="m-3 image is-flex-wrap-wrap">
 
-<h2 class="subtitle mt-3 is-size-3 has-text-centered">
-  If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life
-</h2>
-<div class="buttons is-centered">
-  <button class="button logInButton is-size-4 is-primary is-light">Log In</button>
-  <button class="button signUpButton is-size-4 is-primary is-light">Sign Up</button>
-</div>
+{{!-- ACTUAL IMAGE INPUT--UNCOMMENT BEFORE DEPLOYMENT
+           <img class="is-rounded"  src="/images/welcome.png" /> 
+ PLACEHOLDER IMAGE INPUT BELOW--DELETE BEFORE DEPLOYMENT  --}}
+      <img class="is-rounded"  src="/images/pp.jpeg" />
+{{!-- PLACEHOLDER IMAGE INPUT ABOVE--DELETE BEFORE DEPLOYMENT --}}
+        </figure>
+      </div>
+      <div class="column p-5 is-one-half is-vcentered" >
+        <p class=" p-5">
+          <p class=" has-text-centered">
+            <h1 class="card-header is-size-1 is-centered p-3 title ">Welcome!</h1>
+          </p>
+           <h2 class="subtitle is-centered has-text-centered m-5 p-5 is-size-3 ">
+            If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life
+          </h2>
+        </p>
+        <div class="buttons is-centered">
+          <button class="button is-size-4 has-background-warning-light ">Log In</button>
+          <button class="button  is-size-4 has-background-warning-light">Sign Up</button>
+        </div>
+      </div>
+     </section>
   
 
   <script src="/js/home.js"></script>
