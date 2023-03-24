@@ -44,7 +44,7 @@ function populateTodos() {
       </p>
       <p class="control">
         <a class="button has-background-danger remove" style='width: 70px'>
-          <img src="public/images/remove.png" style="width:25px;height:25px;" />
+          <img src="/images/remove.png" style="width:25px;height:25px;" />
         </a>
       </p>
     `;
