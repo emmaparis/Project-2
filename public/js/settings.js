@@ -1,6 +1,7 @@
 // Save the todo item and selected days
 async function saveTodo() {
     const todoItem = document.querySelector('#todo-item').value.trim();
+    const note = document.querySelector('#todo-note').value.trim();
     const sunday = document.querySelector('#sunday').checked;
     const monday = document.querySelector('#monday').checked;
     const tuesday = document.querySelector('#tuesday').checked;
@@ -14,6 +15,7 @@ async function saveTodo() {
         method: 'POST',
         body: JSON.stringify({
           todo_item: todoItem,
+          note,
           sunday,
           monday,
           tuesday,
@@ -32,6 +34,26 @@ async function saveTodo() {
       }
     }
   }
+  
+  // Fetch and display the user's recurring to-do items
+async function fetchTodos() {
+  const response = await fetch('/api/todos');
+  const todos = await response.json();
+
+  const todoManagement = document.querySelector('#todo-management');
+  todoManagement.innerHTML = '';
+  todos.forEach((todo) => {
+    const div = document.createElement('div');
+    div.className = 'todo-item';
+    div.innerHTML = `
+      <h3>${todo.todo_item}</h3>
+      <p>${todo.note}</p>
+      <button class="button is-danger" onclick="deleteTodo(${todo.id})">Delete</button>
+      <button class="button is-warning" onclick="updateTodo(${todo.id})">Update</button>
+    `;
+    todoManagement.appendChild(div);
+  });
+}
   
   // Delete a todo item
   async function deleteTodo(id) {
