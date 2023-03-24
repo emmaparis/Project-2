@@ -93,12 +93,17 @@ router.get('/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
   console.log("delete");
   try {
+    const noteData = await Note.destroy({
+      where: {
+        todo_id: Number(req.params.id),
+      },
+    });
     const todoData = await Todos.destroy({
       where: {
         id: Number(req.params.id),
       },
     });
-
+    console.log(todoData);
     if (!todoData) {
       res.status(404).json({ message: 'No todo item found with this id!' });
       return;
