@@ -44,7 +44,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
     });
     
-    module.exports = router;
+   
 router.post('/add', async (req, res) => {
   console.log("todo add attempt")
     try {
