@@ -13,6 +13,12 @@
         </div>
       </div>
       {{!-- Add the corresponding note input field --}}
+      <div class="field">
+        <label class="label">Note</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Enter a note (optional)" id="todo-note"></textarea>
+        </div>
+      </div>
 <div class="field">
         <label class="label">Days of the week</label>
         <div class="control">
@@ -27,6 +33,13 @@
             <label><input type="checkbox" id="everyday"> Everyday</label>
           </div>
         </div>
+      </div>
+      {{!-- Add a section for managing recurring to-do items --}}
+      <div class="field">
+        <button class="button is-link" id="manage-todos" type="button">Manage Recurring To-Do Items</button>
+      </div>
+      <div id="todo-management" style="display: none;">
+        {{!-- This section will be populated with recurring to-do items --}}
       </div>
       <div class="field is-grouped">
         <div class="control">
