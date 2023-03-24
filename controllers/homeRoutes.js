@@ -45,4 +45,19 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
     
     module.exports = router;
+router.post('/add', async (req, res) => {
+  console.log("todo add attempt")
+    try {
+        const dbTodoData = await Todos.create({
+            todo_item: req.body.todoText,
+            is_checked: false,
+            user_id: req.session.userID,
+        });
+        res.status(200).json("ok");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
