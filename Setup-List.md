@@ -37,3 +37,9 @@ Note To Do List
 * add event listener, delete event listener etc. in public/js
 * todosRoutes.js
 * Set integration of settings
+
+Friday To Do List
+* Post route
+* Delete route
+* Settings?
+* Integrate the reoccuring todos (new model?)
