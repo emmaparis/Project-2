@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Todos } = require('../models');
+const { User, Todos, Note } = require('../models');
 //const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -19,10 +19,27 @@ router.get('/', async (req, res) => {
     if (toDoData.length > 0){
       hastoDos = true;
     }
+    let noteData = [];
+    let hasNotes = false;
+    if (hastoDos) {
+      const rawNoteData = await Note.findAll({
+        where: {
+          todo_id: 1,
+        },
+      });
+      for (i = 0; i < rawNoteData.length; i++) {
+        noteData.push(rawNoteData[i].get({ plain: true }));
+      }
+      if (noteData.length > 0){
+        hasNotes = true;
+      }
+    }
     res.render('home', {
       toDoData,
+      noteData,
       loggedIn: req.session.loggedIn,
-      hastoDos: hastoDos
+      hastoDos: hastoDos,
+      hasNotes: hasNotes
     });
   } else {
     res.render('home');
