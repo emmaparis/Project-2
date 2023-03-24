@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Todos } = require('../models');
-const withAuth = require('../../utils/auth');
+//const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   if (req.session.loggedIn) {
@@ -15,21 +15,26 @@ router.get('/', async (req, res) => {
       toDoData.push(rawToDoData[i].get({ plain: true }));
     }
     console.log(toDoData);
+    let hastoDos = false;
+    if (toDoData.length > 0){
+      hastoDos = true;
+    }
     res.render('home', {
       toDoData,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      hastoDos: hastoDos
     });
   } else {
     res.render('home');
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
+  console.log("delete");
   try {
     const todoData = await Todos.destroy({
       where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
+        id: Number(req.params.id),
       },
     });
 

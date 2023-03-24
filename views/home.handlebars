@@ -7,9 +7,9 @@
                 </header>
                   <div class="card-content">
                   <div class="content">
-
+                        {{#if hastoDos }}
                              {{> todo-item}}
-
+                        {{/if}}
                               <div class="field is-flex-direction-row has-addons has-addons-centered" >
                                 <p class="control">
                                   <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do." id="new-todo-input">
