@@ -83,3 +83,4 @@ document.querySelectorAll('.delete-btn').forEach((btn) => {
 document.querySelector('#manage-todos').addEventListener('click', () => {
   fetchTodos();
 });
+
