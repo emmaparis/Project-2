@@ -34,7 +34,7 @@ async function saveTodo() {
       }
     }
   }
-  
+
   // Fetch and display the user's recurring to-do items
 async function fetchTodos() {
   const response = await fetch('/api/todos');
@@ -79,5 +79,7 @@ document.querySelectorAll('.delete-btn').forEach((btn) => {
     });
   });
   
-  
-  
+  // Add event listener for the "Manage Recurring To-Do Items" button
+document.querySelector('#manage-todos').addEventListener('click', () => {
+  fetchTodos();
+});
