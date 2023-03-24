@@ -30,56 +30,9 @@
                 <div class="card-content">
                     <br>
                   <div class="content">
-                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
-                      <p class="control">
-                          <label class="checkbox" >
-                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
-                          </label>
-                      </p>
-                      <p class="control">
-                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
-                      </p>
-                      <p class="control">
-                        <a class="button has-background-danger remove" style='width: 70px'>
-                              <img src="/images/remove.png" style="width:25px;height:25px;" />
-                        </a>
-                      </p>
-                    </div>
-
-
-                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
-                      <p class="control">
-                          <label class="checkbox" >
-                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
-                          </label>
-                      </p>
-                      <p class="control">
-                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
-                      </p>
-                      <p class="control">
-                        <a class="button has-background-danger remove" style='width: 70px'>
-                              <img src="/images/remove.png" style="width:25px;height:25px;" />
-                        </a>
-                      </p>
-                    </div>
-                    
-                    <div class="field is-flex-direction-row has-addons has-addons-centered" >
-                      <p class="control">
-                          <label class="checkbox" >
-                              <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
-                          </label>
-                      </p>
-                      <p class="control">
-                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
-                      </p>
-                      <p class="control">
-                        <a class="button has-background-danger remove" style='width: 70px'>
-                              <img src="/images/remove.png" style="width:25px;height:25px;" />
-                        </a>
-                      </p>
-                    </div>
-
-
+                   {{#if hasNotes }}
+                             {{> note-item}}
+                        {{/if}}
                     <div class="field is-flex-direction-row has-addons has-addons-centered" >
                       <p class="control">
                         <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
@@ -108,7 +61,8 @@
             </div>
             </div>
           </div>
-          {{/if}}
+
+{{else}}
 
      <section class="columns card has-background-primary-light m-5 p-5 ">
       <div class="column is-one-third ">
@@ -124,10 +78,10 @@
       <div class="column p-5 is-one-half is-vcentered" >
         <p class=" p-5">
           <p class=" has-text-centered">
-            <h1 class="card-header has-background-warning-light is-size-1 is-centered p-3 title ">Welcome!</h1>
+            <h1 class="card-header has-background-warning-light is-size-1 is-centered p-3 title has-text-dark">Welcome</h1>
           </p>
            <h2 class="subtitle is-centered has-text-centered m-5 p-5 is-size-3 ">
-            If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life
+            If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life!
           </h2>
         </p>
         <div class="buttons is-centered">
@@ -136,7 +90,6 @@
         </div>
       </div>
      </section>
-  
-
+ {{/if}}
   <script src="/js/home.js"></script>
   <script src="/js/createTodo.js"></script>

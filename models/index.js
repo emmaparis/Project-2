@@ -1,9 +1,10 @@
 const User = require('./User');
 const Todos = require('./todo');
+const Note = require('./note');
 
 // PUT RELATIONSHIPS HERE
 
-module.exports = { User, Todos };
+module.exports = { User, Todos, Note };
 
 
 
