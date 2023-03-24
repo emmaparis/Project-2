@@ -41,5 +41,5 @@ Note To Do List
 Friday To Do List
 * Post route
 * Delete route
-* Settings?
+* Settings? c 
 * Integrate the reoccuring todos (new model?)
