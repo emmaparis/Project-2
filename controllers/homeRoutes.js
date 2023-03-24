@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Todos, Note } = require('../models');
 //const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   if (req.session.loggedIn) {
     console.log(req.session);
     const rawToDoData = await Todos.findAll({
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     if (hastoDos) {
       const rawNoteData = await Note.findAll({
         where: {
-          todo_id: 1,
+          todo_id: req.params.id,
         },
       });
       for (i = 0; i < rawNoteData.length; i++) {
