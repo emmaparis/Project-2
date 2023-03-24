@@ -2,6 +2,50 @@ const router = require('express').Router();
 const { User, Todos, Note } = require('../models');
 //const withAuth = require('../../utils/auth');
 
+router.get('/', async (req, res) => {
+  if (req.session.loggedIn) {
+    console.log(req.session);
+    const rawToDoData = await Todos.findAll({
+      where: {
+        user_id: req.session.userID,
+      },
+    });
+    let toDoData = [];
+    for (i = 0; i < rawToDoData.length; i++) {
+      toDoData.push(rawToDoData[i].get({ plain: true }));
+    }
+    console.log(toDoData);
+    let hastoDos = false;
+    if (toDoData.length > 0){
+      hastoDos = true;
+    }
+    let noteData = [];
+    let hasNotes = false;
+    if (hastoDos) {
+      const rawNoteData = await Note.findAll({
+        where: {
+          todo_id: 1,
+        },
+      });
+      for (i = 0; i < rawNoteData.length; i++) {
+        noteData.push(rawNoteData[i].get({ plain: true }));
+      }
+      if (noteData.length > 0){
+        hasNotes = true;
+      }
+    }
+    res.render('home', {
+      toDoData,
+      noteData,
+      loggedIn: req.session.loggedIn,
+      hastoDos: hastoDos,
+      hasNotes: hasNotes
+    });
+  } else {
+    res.render('home');
+  }
+});
+
 router.get('/:id', async (req, res) => {
   if (req.session.loggedIn) {
     console.log(req.session);
