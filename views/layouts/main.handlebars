@@ -42,9 +42,15 @@
                   <a href="/" class="navbar-item is-active is-size-4">
                     Home
                   </a>
+                  {{#if loggedIn}}
+                  <a href="/settings" class="navbar-item is-size-4" id="logout-buttonMain">
+                    Logout
+                  </a>
+                  {{else}}
                   <a href="/login" class="navbar-item is-size-4">
                     Login
                   </a>
+                  {{/if}}
                   <a href="/settings" class="navbar-item is-size-4">
                     Settings
                   </a>
