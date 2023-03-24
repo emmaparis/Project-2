@@ -26,9 +26,9 @@
             <div class="column card">
                 <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
                       <strong>Expansion</strong>
-                      <a class="button mt-1 has-background-primary settings" style='width: 70px; border:none'>
-                        <img src="public/images/gear.png" style="width:25px;height:25px;" />
-                      </a>
+                      <button class="js-modal-trigger button mt-1 has-background-primary settings" data-target="modal-js-example" style='width: 70px; border:none'>
+                        <img src="/images/gear.png" style="width:25px;height:25px;" />
+                      </button>
                 </header>
                 <div class="card-content">
                     <br>
@@ -64,6 +64,18 @@
             </div>
             </div>
           </div>
+          <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <p>Modal JS example</p>
+      hey
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 
 {{else}}
 
