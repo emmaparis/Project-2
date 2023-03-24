@@ -26,9 +26,9 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
   console.log("todo add attempt")
     try {
-        const dbTodoData = await Post.create({
+        const dbTodoData = await Todos.create({
             todo_item: req.body.todoText,
-            contents: req.body.postContent,
+            is_checked: false,
             user_id: req.session.userID,
         });
         res.status(200).json("ok");
