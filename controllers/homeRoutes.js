@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
     else {
       defaultID = 1;
     }
+    const currentToDo = await Todos.findByPk(defaultID) || 0;
     let noteData = [];
     let hasNotes = false;
     if (hastoDos) {
@@ -46,7 +47,13 @@ router.get('/', async (req, res) => {
       hastoDos: hastoDos,
       hasNotes: hasNotes,
       currentNote: defaultID,
-      currentToDo: await User.findByPk(defaultID)
+      sunday: currentToDo.sunday,
+      monday: currentToDo.monday,
+      tuesday: currentToDo.tuesday,
+      wednesday: currentToDo.wednesday,
+      thursday: currentToDo.thursday,
+      friday: currentToDo.friday,
+      saturday: currentToDo.saturday,
     });
   } else {
     res.render('home');
@@ -70,6 +77,8 @@ router.get('/:id', async (req, res) => {
     if (toDoData.length > 0){
       hastoDos = true;
     }
+    const currentToDo = await Todos.findByPk(Number(req.params.id)) || 0;
+    console.log(currentToDo.sunday);
     let noteData = [];
     let hasNotes = false;
     if (hastoDos) {
@@ -85,7 +94,6 @@ router.get('/:id', async (req, res) => {
         hasNotes = true;
       }
     }
-    console.log(toDoData[0].sunday);
     res.render('home', {
       toDoData,
       noteData,
@@ -93,7 +101,13 @@ router.get('/:id', async (req, res) => {
       hastoDos: hastoDos,
       hasNotes: hasNotes,
       currentNote: Number(req.params.id),
-      currentToDo: await User.findByPk(Number(req.params.id))
+      sunday: currentToDo.sunday,
+      monday: currentToDo.monday,
+      tuesday: currentToDo.tuesday,
+      wednesday: currentToDo.wednesday,
+      thursday: currentToDo.thursday,
+      friday: currentToDo.friday,
+      saturday: currentToDo.saturday,
     });
   } else {
     res.render('home');
@@ -154,6 +168,30 @@ router.post('/add', async (req, res) => {
             is_checked: false,
             user_id: req.session.userID,
         });
+        res.status(200).json("ok");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.put('/update/:id', async (req, res) => {
+  console.log("todo update attempt")
+    try {
+        const dbTodoData = await Todos.update({
+            sunday: req.body.sunday,
+            monday: req.body.monday,
+            tuesday: req.body.tuesday,
+            wednesday: req.body.wednesday,
+            thursday: req.body.thursday,
+            friday: req.body.friday,
+            saturday: req.body.saturday
+        },
+        {
+        where: {
+          id: req.params.id
+        }
+      });
         res.status(200).json("ok");
     } catch (err) {
         console.log(err);
