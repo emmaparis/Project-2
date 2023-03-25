@@ -26,6 +26,9 @@
             <div class="column card">
                 <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
                       <strong>Expansion</strong>
+                      <button class="js-modal-trigger button mt-1 has-background-primary settings" data-target="modal-js-example" style='width: 70px; border:none'>
+                        <img src="/images/gear.png" style="width:25px;height:25px;" />
+                      </button>
                 </header>
                 <div class="card-content">
                     <br>
@@ -62,16 +65,17 @@
             </div>
           </div>
 
+
 {{else}}
 
      <section class="columns card has-background-primary-light m-5 p-5 ">
       <div class="column is-one-third ">
         <figure class="m-3 image is-flex-wrap-wrap">
 
-{{!-- ACTUAL IMAGE INPUT--UNCOMMENT BEFORE DEPLOYMENT
+{{!-- ACTUAL IMAGE INPUT--UNCOMMENT BEFORE DEPLOYMENT --}}
            <img class="is-rounded"  src="/images/welcome.png" /> 
- PLACEHOLDER IMAGE INPUT BELOW--DELETE BEFORE DEPLOYMENT  --}}
-      <img class="is-rounded"  src="/images/pp.jpeg" />
+ {{!--PLACEHOLDER IMAGE INPUT BELOW--DELETE BEFORE DEPLOYMENT  --}}
+      {{!-- <img class="is-rounded"  src="/images/pp.jpeg" /> --}}
 {{!-- PLACEHOLDER IMAGE INPUT ABOVE--DELETE BEFORE DEPLOYMENT --}}
         </figure>
       </div>
