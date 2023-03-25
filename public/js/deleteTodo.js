@@ -13,7 +13,7 @@ const deleteTodoHandler= async (event) => {
     });
     if (response.ok) {
         console.log("ok");
-        document.location.replace(`/1`);
+        document.location.replace(`/`);
     } else {
         alert('Failed to delete todo item');
     }
