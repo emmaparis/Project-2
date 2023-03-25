@@ -1,5 +1,5 @@
-const logInButtonEl = document.querySelector(".logInButton")
-const signUpButtonEl = document.querySelector(".signUpButton")
+const logInButtonEl = document.querySelector("#logInButton")
+const signUpButtonEl = document.querySelector("#signUpButton")
 const modTrigger=document.querySelector('.js-modal-trigger')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-//logInButtonEl.addEventListener()
-//send to log in page
-//signUpButtonEl.addEventListener()
-//create sign in page
+
+logInButtonEl.addEventListener('click', (event) => {
+     document.location.replace('/login');})
+
+signUpButtonEl.addEventListener('click', (event) => {
+    document.location.replace('/signup');})
