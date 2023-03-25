@@ -46,7 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-//logInButtonEl.addEventListener()
-//send to log in page
-//signUpButtonEl.addEventListener()
-//create sign in page
+
+logInButtonEl.addEventListener('click', (event) => {
+     document.location.replace('/login');})
+
+// send to log in page
+// signUpButtonEl.addEventListener()
+// create sign in page
