@@ -74,45 +74,30 @@
  
     <main class="section is-vcentered">
   <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
-  <!-- <div class="log-in">
-    <h2>Log In</h2>
-    {{#if loggedIn}}
-    {{> logged-message}}
-    {{/if}} -->
-    <div class="columns is-mobile is-centered ">
-      <div class="hero column is-half">
-        <div class="hero-body is-justify-content-center is-align-items-center">
-          <div class="columns is-flex is-flex-direction-column box">
-            <div class="column">
-              <label for="name">Name</label>
-              <input class="input is-primary" type="text" placeholder="Enter Name">
-            </div>
-            <div class="column">
-              <label for="email">Email</label>
-              <input class="input is-primary" type="text" placeholder="Email address">
-            </div>
-            <div class="column">
-              <label for="Name">Password</label>
-              <input class="input is-primary" type="password" placeholder="Password">
-          
-            </div>
-            <div class="column">
-              <label for="Name">Confirm Password</label>
-              <input class="input is-primary" type="password" placeholder="Password">
-          
-            </div>
-            <div class="column">
-              <button class="button is-primary is-fullwidth" type="submit">Create an account</button>
-            </div>
-            <div class="has-text-centered">
-              <p> Already have an account?  <a href="/login" class="has-text-primary">Login</a>
-              </p>
-            </div>
-          </div>
+  <div class="column card">
+    <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
+          <strong>Expansion</strong>
+    </header>
+    <div class="card-content">
+        <br>
+      <div class="content">
+       {{#if hasNotes }}
+                 {{> note-item}}
+            {{/if}}
+        <div class="field is-flex-direction-row has-addons has-addons-centered" >
+          <p class="control">
+            <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
+          </p>
+          <p class="control">
+            <a class="button has-background-primary remove" style='width: 70px'>
+                  <img src="/images/add.png" style="width:25px;height:25px;" />
+            </a>
+          </p>
         </div>
       </div>
     </div>
-    <!-- EVERYTHING BELOW THIS IS INSIDE THE MAIN.HANDLEBAR -->
+  </div>
+       <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
     </main>
 
     <!-- Page Footer -->
