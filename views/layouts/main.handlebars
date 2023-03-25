@@ -39,12 +39,18 @@
               </div>
               <div id="navbarMenuHeroA" class="navbar-menu">
                 <div class="navbar-end">
-                  <a href="/" class="navbar-item is-active is-size-4">
+                  <a href="/1" class="navbar-item is-active is-size-4">
                     Home
                   </a>
+                  {{#if loggedIn}}
+                  <a href="/settings" class="navbar-item is-size-4" id="logout-buttonMain">
+                    Logout
+                  </a>
+                  {{else}}
                   <a href="/login" class="navbar-item is-size-4">
                     Login
                   </a>
+                  {{/if}}
                   <a href="/settings" class="navbar-item is-size-4">
                     Settings
                   </a>
@@ -87,5 +93,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
     <script src="/js/main.js"></script>
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+
+      <div class="modal-content">
+        <div class="card">
+          <p class="card-header is-size-2 has-text-dark has-background-primary"> List Item Frequency</p>
+          <p class="card-content has-text-centered is-size-3">
+            Check how often you would like to complete this event. </p>
+          <div class="card is-size-3 is-centered has-text-centered" style="border:none;">
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-block'></p>Everyday</p>
+          </label>
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Sunday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Monday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Tuesday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Wednesday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Thursday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Friday</p>
+          </label> 
+          <br>
+          <label class="checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox">
+            <p style='display:inline-flex'></p>Saturday</p>
+          </label> 
+          <br>
+          <button class="button m-2 is-size-4 is-primary">Save</button>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
   </body>
 </html>

@@ -33,6 +33,9 @@ chl=10K€|40K€|45K€"/>
             <div class="column card">
                 <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
                       <strong>Expansion</strong>
+                      <button class="js-modal-trigger button mt-1 has-background-primary settings" data-target="modal-js-example" style='width: 70px; border:none'>
+                        <img src="/images/gear.png" style="width:25px;height:25px;" />
+                      </button>
                 </header>
                 <div class="card-content">
                     <br>
@@ -42,10 +45,10 @@ chl=10K€|40K€|45K€"/>
                         {{/if}}
                     <div class="field is-flex-direction-row has-addons has-addons-centered" >
                       <p class="control">
-                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
+                        <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter note." id="new-note-input">
                       </p>
                       <p class="control">
-                        <a class="button has-background-primary remove" style='width: 70px'>
+                        <a class="button has-background-primary remove {{currentNote}}" style='width: 70px' id="submit-note-button">
                               <img src="/images/add.png" style="width:25px;height:25px;" />
                         </a>
                       </p>
@@ -68,25 +71,30 @@ chl=10K€|40K€|45K€"/>
             </div>
             </div>
           </div>
-          {{/if}}
-
-<h1 class=" is-size-1 title has-text-centered">Welcome!</h1>
-<figure class="image is-3by2 is-align-items-center is-flex-wrap-wrap">
-  <img class="is-rounded" src="/images/pp.jpeg" />
-</figure>
-<!-- <figure class="image is-align-items-center" >
-  <img class=" px-5 is-rounded" src="/images/welcome.png" />
-</figure>  -->
-
-<h2 class="subtitle mt-3 is-size-3 has-text-centered">
-  If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life
-</h2>
-<div class="buttons is-centered">
-  <button class="button logInButton is-size-4 is-primary is-light">Log In</button>
-  <button class="button signUpButton is-size-4 is-primary is-light">Sign Up</button>
-</div>
-  
-
+{{else}}
+     <section class="columns card has-background-primary-light m-5 p-5 ">
+      <div class="column is-one-third ">
+        <figure class="m-3 image is-flex-wrap-wrap">
+           <img class="is-rounded"  src="/images/welcome.png" /> 
+        </figure>
+      </div>
+      <div class="column p-5 is-one-half is-vcentered" >
+        <p class=" p-5">
+          <p class=" has-text-centered">
+            <h1 class="card-header has-background-warning-light is-size-1 is-centered p-3 title has-text-dark">Welcome</h1>
+          </p>
+           <h2 class="subtitle is-centered has-text-centered m-5 p-5 is-size-3 ">
+            If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life!
+          </h2>
+        </p>
+        <div class="buttons is-centered">
+          <button id = 'logInButton' class="button is-size-4 has-background-warning-light ">Log In</button>
+          <button  id = 'signUpButton' class="button  is-size-4 has-background-warning-light">Sign Up</button>
+        </div>
+      </div>
+     </section>
+ {{/if}}
   <script src="/js/home.js"></script>
   <script src="/js/createTodo.js"></script>
   <script src="/js/pieChart.js"></script>
+  <script src="/js/createNote.js"></script>

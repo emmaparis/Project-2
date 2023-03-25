@@ -71,35 +71,32 @@
           <p id="date-time" class="has-text-left is-size-4" style="position:relative; left:20px; top:-280px;">Date & Time will go here</p>
         </div>
       </section>
-
+ 
     <main class="section is-vcentered">
   <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
-    <!-- <div class="card">
-      <div class="card-image">
-        <figure class="image is-128x128">
-          <img src="../public/images/pp.jpeg" alt="Placeholder image">
-        </figure>
+  <div class="column card">
+    <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
+          <strong>Expansion</strong>
+    </header>
+    <div class="card-content">
+        <br>
+      <div class="content">
+       {{#if hasNotes }}
+                 {{> note-item}}
+            {{/if}}
+        <div class="field is-flex-direction-row has-addons has-addons-centered" >
+          <p class="control">
+            <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="Enter to-do.">
+          </p>
+          <p class="control">
+            <a class="button has-background-primary remove" style='width: 70px'>
+                  <img src="/images/add.png" style="width:25px;height:25px;" />
+            </a>
+          </p>
+        </div>
       </div>
-    </div> -->
- 
-    <h1 class=" is-size-1 title has-text-centered">Welcome!</h1>
-
-    <figure class="image is-3by2 is-align-items-center is-flex-wrap-wrap">
-      <img class="is-rounded" src="../public/images/pp.jpeg" />
-    </figure>
-  <!-- ACTUAL IMAGE INPUT--UNCOMMENT -->
-      <!-- <figure class="image is-align-items-center" >
-      <img class=" px-5 is-rounded" src="../public/images/welcome.png" />
-    </figure>  -->
-
-    <h2 class="subtitle mt-3 is-size-3 has-text-centered">
-      If you already have an account with us, <strong>log in</strong> or <strong>sign up</strong> and begin to log your life
-    </h2>
-    <div class="buttons is-centered">
-      <button class="button is-size-4 is-primary is-light">Log In</button>
-      <button class="button is-size-4 is-primary is-light">Sign Up</button>
     </div>
-  
+  </div>
        <!-- EVERYTHING BELOW THIS IS OUTSIDE THE MAIN.HANDLEBAR -->
     </main>
 
@@ -108,9 +105,12 @@
         <div class="content is-primary has-text-centered m-0 p-0 ">
             <p>Thank you for using Life Log!<br> ©2023 Project2.Group1. | All Rights Reserved <br> Made with love by Emma Paris❤️, Liza Parr❤️, Joseph Reis❤️, Tatiana Castro💃🏽, David Keim❤️, and Shannya Niveyro🐼.</p>
         </div>
+      </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
     <!-- <script src=""></script> --> 
+    <script src="../public/js/signup.js"></script>
   </body>
 </html>
+
