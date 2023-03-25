@@ -34,7 +34,17 @@ router.get('/', async (req, res) => {
         hasNotes = true;
       }
     }
+
+    const chartCHL = toDoData.map(item => item.todo_item).join('|');
+    console.log('chartCHL', chartCHL)
+    const chartCHD = [];
+    for (let i = 0; i < toDoData.length; i++) {
+      chartCHD.push(100/toDoData.length);
+    }
+
     res.render('home', {
+      chartCHL,
+      chartCHD: chartCHD.join(','),
       toDoData,
       noteData,
       loggedIn: req.session.loggedIn,
@@ -79,7 +89,17 @@ router.get('/:id', async (req, res) => {
         hasNotes = true;
       }
     }
+
+    const chartCHL = toDoData.map(item => item.todo_item).join('|');
+    console.log('chartCHL', chartCHL)
+    const chartCHD = [];
+    for (let i = 0; i < toDoData.length; i++) {
+      chartCHD.push(100/toDoData.length);
+    }
+
     res.render('home', {
+      chartCHL,
+      chartCHD: chartCHD.join(','),
       toDoData,
       noteData,
       loggedIn: req.session.loggedIn,
