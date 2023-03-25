@@ -18,8 +18,8 @@ const deleteTodoHandler= async (event) => {
         alert('Failed to delete todo item');
     }
 }
+
 const elementList = document.getElementsByClassName('delete-button');
-console.log(elementList);
 for (i = 0; i < elementList.length; i++) {
     elementList[i].addEventListener('click', deleteTodoHandler);
 }
