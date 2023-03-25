@@ -16,15 +16,20 @@ router.get('/', async (req, res) => {
     }
     console.log(toDoData);
     let hastoDos = false;
+    let defaultID;
     if (toDoData.length > 0){
       hastoDos = true;
+      defaultID = toDoData[0].id;
+    }
+    else {
+      defaultID = 1;
     }
     let noteData = [];
     let hasNotes = false;
     if (hastoDos) {
       const rawNoteData = await Note.findAll({
         where: {
-          todo_id: 1,
+          todo_id: defaultID,
         },
       });
       for (i = 0; i < rawNoteData.length; i++) {
@@ -40,7 +45,8 @@ router.get('/', async (req, res) => {
       loggedIn: req.session.loggedIn,
       hastoDos: hastoDos,
       hasNotes: hasNotes,
-      currentNote: 1
+      currentNote: defaultID,
+      currentToDo: await User.findByPk(defaultID)
     });
   } else {
     res.render('home');
@@ -85,7 +91,8 @@ router.get('/:id', async (req, res) => {
       loggedIn: req.session.loggedIn,
       hastoDos: hastoDos,
       hasNotes: hasNotes,
-      currentNote: req.params.id
+      currentNote: Number(req.params.id),
+      currentToDo: await User.findByPk(Number(req.params.id))
     });
   } else {
     res.render('home');
