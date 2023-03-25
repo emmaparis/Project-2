@@ -139,7 +139,7 @@ router.post('/:id/add-note', async (req, res) => {
         const dbNoteData = await Note.create({
             note_item: req.body.noteText,
             is_checked: false,
-            todo_id: req.params.id,
+            todo_id: Number(req.params.id),
         });
         res.status(200).json("ok");
     } catch (err) {

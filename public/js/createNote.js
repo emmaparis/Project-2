@@ -2,7 +2,11 @@ const createNoteHandler = async (event) => {
     event.preventDefault();
     console.log("pressed submit note button");
     const noteText = document.querySelector('#new-note-input').value.trim();
-    const todoAddID = event.target.classList[3];
+    let todoAddID = Number(event.target.classList[3]);
+    if (!todoAddID) {
+        todoAddID = Number(event.target.parentElement.classList[3]);
+    }
+    console.log(todoAddID);
     console.log(noteText);
     if (noteText) {
       const response = await fetch(`/${todoAddID}/add-note`, {
