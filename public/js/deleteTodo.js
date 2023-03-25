@@ -13,9 +13,13 @@ const deleteTodoHandler= async (event) => {
     });
     if (response.ok) {
         console.log("ok");
-        document.location.replace(`/`);
+        document.location.replace(`/1`);
     } else {
         alert('Failed to delete todo item');
     }
 }
-  document.querySelector('.delete-button').addEventListener('click', deleteTodoHandler);
+
+const elementList = document.getElementsByClassName('delete-button');
+for (i = 0; i < elementList.length; i++) {
+    elementList[i].addEventListener('click', deleteTodoHandler);
+}
