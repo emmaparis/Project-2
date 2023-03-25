@@ -112,10 +112,30 @@ router.delete('/delete/:id', async (req, res) => {
     }
 
     res.status(200).json(todoData);
-} catch (err) {
+  } catch (err) {
     res.status(500).json(err);
     }
+});
+
+router.delete('/delete-note/:id', async (req, res) => {
+  console.log("delete note");
+  try {
+    const noteData = await Note.destroy({
+      where: {
+        id: Number(req.params.id),
+      },
     });
+    console.log(noteData);
+    if (!noteData) {
+      res.status(404).json({ message: 'No note item found with this id!' });
+      return;
+    }
+
+    res.status(200).json(noteData);
+  } catch (err) {
+    res.status(500).json(err);
+    }
+});
     
    
 router.post('/add', async (req, res) => {
