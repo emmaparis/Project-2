@@ -1,5 +1,12 @@
 {{#if loggedIn}}
 
+{{!-- <link href="https://image-charts.com/chart
+?cht=pd
+&chd=t:10,40,45
+&chs=700x100
+chdl=Expansion|Payroll|Equipment
+chli=95K€
+chl=10K€|40K€|45K€"/> --}}
 <div class="columns">
             <div class="column is-one-third card mr-3" style="min-height: 70vh">
                 <header class="card-header is-size-2" style=" background-color: #00d1b2; text-align: center;">
@@ -57,9 +64,16 @@
                 <div class="content">
                 <p class="is-size-3 has-text-centered"> <strong>Congratulations!</strong> <br> You're almost there!</p>
                  <figure class="image is-256x256 is-align-items-center is-flex-wrap-wrap">
-                <img src="/images/koot.png" class= "is-rounded" />
+                {{!-- <img src="/images/koot.png" class= "is-rounded" /> --}}
+                <img src="https://image-charts.com/chart
+?cht=pd
+&chs=600x600
+&chd=t:{{chartCHD}}
+&chl={{chartCHL}}
+&chlps=font.size,23
+&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1" alt="Pie Chart">
                   </figure>
-                  <button class="button is-primary is-size-5 is-fullwidth has-text-dark">View Past Progress</button>
+                  {{!-- <button class="button is-primary is-size-5 is-fullwidth has-text-dark">View Past Progress</button> --}}
                 </div>
             </div>
             </div>
@@ -91,3 +105,4 @@
      <script src="/js/homeLoggedOut.js"></script>
  {{/if}}
   <script src="/js/home.js"></script>
+  <script src="/controllers/chartRoutes.js"></script>
