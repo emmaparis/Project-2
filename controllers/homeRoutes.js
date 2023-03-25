@@ -153,6 +153,14 @@ router.post('/add', async (req, res) => {
     }
 });
 
+router.get('/get-note/:id', async (req, res) => {
+    console.log("lookup note");
+    const todoItem = await Note.findByPk(req.params.id).then((data) => {
+        return data;
+    });
+    res.json(todoItem.dataValues.todo_id);
+});
+
 router.post('/:id/add-note', async (req, res) => {
   console.log("note add attempt")
     try {

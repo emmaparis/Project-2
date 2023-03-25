@@ -5,7 +5,11 @@ const deleteNoteHandler= async (event) => {
     if (!noteID) {
        noteID = event.target.parentElement.classList[3];
     }
-    console.log(event.target);
+    let todoID = await fetch(`/get-note/${noteID}`, {
+        method: 'GET',
+    });
+    todoID = await todoID.json().then((data) => data);
+    console.log(event.target)
     console.log(event.target.classList);
     console.log(noteID);
     const response = await fetch(`/delete-note/${noteID}`, {
@@ -13,7 +17,7 @@ const deleteNoteHandler= async (event) => {
     });
     if (response.ok) {
         console.log("ok");
-        document.location.replace(`/1`);
+        document.location.replace(`/${todoID}`);
     } else {
         alert('Failed to delete note item');
     }
