@@ -85,6 +85,7 @@ router.get('/:id', async (req, res) => {
         hasNotes = true;
       }
     }
+    console.log(toDoData[0].sunday);
     res.render('home', {
       toDoData,
       noteData,

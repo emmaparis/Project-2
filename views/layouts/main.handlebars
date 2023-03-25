@@ -104,37 +104,37 @@
             Check how often you would like to complete this event. </p>
           <div class="card is-size-3 is-centered has-text-centered" style="border:none;">
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="sunday-checkbox" checked="{{currentToDo.sunday}}">
+            <input style='width: 20px; height: 20px' type="checkbox" id="sunday-checkbox" {{#if currentToDo.sunday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Sunday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="monday-checkbox" checked="{{currentToDo.monday}}">
+            <input style='width: 20px; height: 20px' type="checkbox" id="monday-checkbox" {{#if currentToDo.monday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Monday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="tuesday-checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox" id="tuesday-checkbox" {{#if currentToDo.tuesday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Tuesday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="wednesday-checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox" id="wednesday-checkbox" {{#if currentToDo.wednesday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Wednesday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="thursday-checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox" id="thursday-checkbox" {{#if currentToDo.thursday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Thursday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="friday-checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox" id="friday-checkbox" {{#if currentToDo.friday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Friday</p>
           </label> 
           <br>
           <label class="checkbox">
-            <input style='width: 20px; height: 20px' type="checkbox" id="saturday-checkbox">
+            <input style='width: 20px; height: 20px' type="checkbox" id="saturday-checkbox" {{#if currentToDo.saturday}}checked="true"{{/if}}>
             <p style='display:inline-flex'></p>Saturday</p>
           </label> 
           <br>
