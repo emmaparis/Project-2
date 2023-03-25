@@ -39,7 +39,8 @@ router.get('/', async (req, res) => {
       noteData,
       loggedIn: req.session.loggedIn,
       hastoDos: hastoDos,
-      hasNotes: hasNotes
+      hasNotes: hasNotes,
+      currentNote: 1
     });
   } else {
     res.render('home');
@@ -83,7 +84,8 @@ router.get('/:id', async (req, res) => {
       noteData,
       loggedIn: req.session.loggedIn,
       hastoDos: hastoDos,
-      hasNotes: hasNotes
+      hasNotes: hasNotes,
+      currentNote: req.params.id
     });
   } else {
     res.render('home');
@@ -123,6 +125,21 @@ router.post('/add', async (req, res) => {
             todo_item: req.body.todoText,
             is_checked: false,
             user_id: req.session.userID,
+        });
+        res.status(200).json("ok");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.post('/:id/add-note', async (req, res) => {
+  console.log("note add attempt")
+    try {
+        const dbNoteData = await Note.create({
+            note_item: req.body.noteText,
+            is_checked: false,
+            todo_id: req.params.id,
         });
         res.status(200).json("ok");
     } catch (err) {
