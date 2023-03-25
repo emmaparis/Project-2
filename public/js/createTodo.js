@@ -12,7 +12,7 @@ const createTodoHandler = async (event) => {
   
       if (response.ok) {
         console.log("ok");
-        document.location.replace(`/1`);
+        document.location.reload();
       } else {
         alert('Failed to add todo item');
       }

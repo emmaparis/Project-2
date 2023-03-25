@@ -1,21 +1,17 @@
 // Save the todo item and selected days
-async function saveTodo() {
-    const todoItem = document.querySelector('#todo-item').value.trim();
-    const note = document.querySelector('#todo-note').value.trim();
-    const sunday = document.querySelector('#sunday').checked;
-    const monday = document.querySelector('#monday').checked;
-    const tuesday = document.querySelector('#tuesday').checked;
-    const wednesday = document.querySelector('#wednesday').checked;
-    const thursday = document.querySelector('#thursday').checked;
-    const friday = document.querySelector('#friday').checked;
-    const saturday = document.querySelector('#saturday').checked;
+async function saveTodo(event) {
+    const sunday = document.querySelector('#sunday-checkbox').checked;
+    const monday = document.querySelector('#monday-checkbox').checked;
+    const tuesday = document.querySelector('#tuesday-checkbox').checked;
+    const wednesday = document.querySelector('#wednesday-checkbox').checked;
+    const thursday = document.querySelector('#thursday-checkbox').checked;
+    const friday = document.querySelector('#friday-checkbox').checked;
+    const saturday = document.querySelector('#saturday-checkbox').checked;
   
-    if (todoItem && (sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
-      const response = await fetch('/api/todos', {
-        method: 'POST',
+    if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
+      const response = await fetch(`/update/${event.target.classList[4]}`, {
+        method: 'PUT',
         body: JSON.stringify({
-          todo_item: todoItem,
-          note,
           sunday,
           monday,
           tuesday,
@@ -34,7 +30,7 @@ async function saveTodo() {
       }
     }
   }
-
+/*
   // Fetch and display the user's recurring to-do items
 async function fetchTodos() {
   const response = await fetch('/api/todos');
@@ -68,9 +64,9 @@ async function fetchTodos() {
       alert('Failed to delete todo item.');
     }
   }
-  
+  */
   document.querySelector('#save-todo').addEventListener('click', saveTodo);
-  
+  /*
 // Add event listeners for delete buttons
 document.querySelectorAll('.delete-btn').forEach((btn) => {
     btn.addEventListener('click', (event) => {
@@ -84,3 +80,4 @@ document.querySelector('#manage-todos').addEventListener('click', () => {
   fetchTodos();
 });
 
+*/
