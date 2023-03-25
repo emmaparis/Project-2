@@ -97,9 +97,34 @@
       <div class="modal-background"></div>
 
       <div class="modal-content">
-        <div class="box">
-          <p>Modal JS example</p>
-          hey
+        <div class="card">
+          <p class="card-header"> List Item Frequency</p>
+          <p class="card-content">
+            Check how often you complete this event.
+            {{!-- <div class="field is-flex-direction-row has-addons has-addons-centered" >
+                <p class="control">
+                    <label class="checkbox" >
+                        <input class="is-primary is-large" type="checkbox" style='width: 20px; height: 20px; background-color:#edda84'>
+                        <p class="is-size-5 pb-3">Monday</p>
+                    </label>
+                </p>
+              </div> --}}
+          <div class="field is-flex-direction-row has-addons has-addons-centered" >
+            <p class="control">
+                <label class="checkbox" >
+                    <input class="is-primary" type="checkbox" style='width: 40px; height: 40px; background-color:#edda84'>
+                </label>
+            </p>
+            <p class="control">
+              <input class="input is-flex-wrap-wrap m-0" style='max-width:100%;max-height: 40px; ' type="text" placeholder="This would be a submitted to-do.">
+            </p>
+            <p class="control">
+              <a class="button has-background-danger remove" style='width: 70px'>
+                    <img src="public/images/remove.png" style="width:25px;height:25px;" />
+              </a>
+            </p>
+          </div>
+          </p>
         </div>
       </div>
 
