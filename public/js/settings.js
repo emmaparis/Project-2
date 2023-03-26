@@ -88,3 +88,21 @@ async function saveTodo(event) {
       alert('Failed to update todo.');
     }
   }
+
+  async function deleteTodo(todoId) {
+    const response = await fetch(`/api/todos/${todoId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      alert('Todo deleted successfully.');
+      fetchRecurringTodos();
+    } else {
+      alert('Failed to delete todo.');
+    }
+  }
+  
+  document
+    .getElementById('manage-recurring-todos')
+    .addEventListener('click', fetchRecurringTodos);
