@@ -3,6 +3,7 @@ const { Todos } = require('../models');
 
 // Fetch recurring to-do items
 router.get('/', async (req, res) => {
+    console.log("Get Route");
     try {
       const recurringTodos = await Todos.findAll({
         where: {
@@ -32,7 +33,7 @@ router.put('/', async (req, res) => {
   });
 
   // Delete a recurring to-do item
-router.delete('/', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
       const deletedTodo = await Todos.destroy({
         where: {

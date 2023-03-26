@@ -21,15 +21,14 @@ router.get('/api/test', (req, res) => {
         },
       ]);
   });
+// API routes
+router.use('/recurring', recurringTodoRoutes);
+router.use('/api/todos', todoRoutes);
 
 // View routes
 router.use('/login', loginRoutes);
 router.use('/settings', settingsRoutes)
 router.use('/signup', signupRoutes)
 router.use('/', homeRoutes);
-
-// API routes
-router.use('/api/todo/recurring', recurringTodoRoutes);
-router.use('/api/todo', todoRoutes);
 
 module.exports = router;

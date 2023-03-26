@@ -32,10 +32,11 @@ async function saveTodo(event) {
   }
   async function fetchRecurringTodos() {
     try {
-    const response = await fetch('/api/todos/recurring', 
+      console.log("Button clicked");
+    const response = await fetch('/recurring', 
     {
       method: 'GET',
-      headers: {'Content-Type': 'application/json'},
+      // headers: {'Content-Type': 'application/json'},
     });
   
     if (response.ok) {
@@ -57,7 +58,7 @@ async function saveTodo(event) {
     todos.forEach((todo) => {
       const todoItem = document.createElement('div');
       todoItem.innerHTML = `
-        <h3>${todo.title}</h3>
+        <h3>${todo.todo_item}</h3>
         <button class="edit-todo" data-id="${todo.id}">Edit</button>
         <button class="delete-todo" data-id="${todo.id}">Delete</button>
       `;
@@ -96,7 +97,7 @@ async function saveTodo(event) {
   }
 
   async function deleteTodo(todoId) {
-    const response = await fetch(`/api/todos/${todoId}`, {
+    const response = await fetch(`/recurring/delete/${todoId}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     });
