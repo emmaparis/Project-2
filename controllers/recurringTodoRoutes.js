@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { todo } = require('../models');
+const { Todos } = require('../models');
 
 // Fetch recurring to-do items
-router.get('/api/todos/recurring', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-      const recurringTodos = await todo.findAll({
+      const recurringTodos = await Todos.findAll({
         where: {
             isRecurring: true,
         },
@@ -17,9 +17,9 @@ router.get('/api/todos/recurring', async (req, res) => {
   });
 
   // Edit a recurring to-do item
-router.put('/api/todos/recurring', async (req, res) => {
+router.put('/', async (req, res) => {
     try {
-      const updatedTodo = await todo.update(req.body, {
+      const updatedTodo = await Todos.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -32,9 +32,9 @@ router.put('/api/todos/recurring', async (req, res) => {
   });
 
   // Delete a recurring to-do item
-router.delete('/api/todos/recurring', async (req, res) => {
+router.delete('/', async (req, res) => {
     try {
-      const deletedTodo = await todo.destroy({
+      const deletedTodo = await Todos.destroy({
         where: {
           id: req.params.id,
         },

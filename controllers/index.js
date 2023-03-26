@@ -29,7 +29,7 @@ router.use('/signup', signupRoutes)
 router.use('/', homeRoutes);
 
 // API routes
-router.use(recurringTodoRoutes);
+router.use('/api/todo/recurring', recurringTodoRoutes);
 router.use('/api/todo', todoRoutes);
 
 module.exports = router;
