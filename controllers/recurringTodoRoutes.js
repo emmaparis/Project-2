@@ -33,3 +33,18 @@ router.put('/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  // Delete a recurring to-do item
+router.delete('/:id', async (req, res) => {
+    try {
+      const deletedTodo = await Todo.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      res.status(200).json(deletedTodo);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
