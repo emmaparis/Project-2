@@ -93,10 +93,32 @@ async function saveEdits(event) {
     if (response.ok) {
       const todos = await response.json();
       console.log('Fetched data:', todos); // Add this line to log the fetched data
-      document.getElementById("save-button").setAttribute("data-id", todos[0].id);
-      if (todos[0].monday) {
-        document.getElementById("monday").checked = true;
+      if (todos.length > 0) {
+        document.getElementById("day-container").setAttribute("style", "display: block;")
+        document.getElementById("save-button").setAttribute("data-id", todos[0].id);
+        if (todos[0].sunday) {
+          document.getElementById("sunday").checked = true;
+        }
+        if (todos[0].monday) {
+          document.getElementById("monday").checked = true;
+        }
+        if (todos[0].tuesday) {
+          document.getElementById("tuesday").checked = true;
+        }
+        if (todos[0].wednesday) {
+          document.getElementById("wednesday").checked = true;
+        }
+        if (todos[0].thursday) {
+          document.getElementById("thursday").checked = true;
+        }
+        if (todos[0].friday) {
+          document.getElementById("friday").checked = true;
+        }
+        if (todos[0].saturday) {
+          document.getElementById("saturday").checked = true;
+        }
       }
+      
     } else {
       alert('Failed to fetch todo data.');
     }
