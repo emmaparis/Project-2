@@ -1,4 +1,4 @@
-<div class="columns is-mobile is-centered ">
+<div class="columns is-mobile is-centered " id="signupcard">
     <div class="hero column is-half">
     <div class="hero-body is-justify-content-center is-align-items-center">
         <div class="columns is-flex is-flex-direction-column box">
@@ -10,6 +10,7 @@
             <label for="email">Email</label>
             <input id="email" class="input is-primary" type="text" placeholder="Email address">
         </div>
+        <div class="has-text-danger has-text-centered" id="pwErr"></div>
         <div class="column">
             <label for="Name">Password</label>
             <input id="password" class="input is-primary" type="password" placeholder="Password">
@@ -17,7 +18,7 @@
         </div>
         <div class="column">
             <label for="Name">Confirm Password</label>
-            <input id="password1" class="input is-primary" type="password" placeholder="Password">
+            <input id="passwordCon" class="input is-primary" type="password" placeholder="Password">
         
         </div>
         <div class="column">
@@ -31,3 +32,4 @@
     </div>
     </div>
 </div>
+<script src="/js/signup.js"></script>
