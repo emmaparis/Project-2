@@ -242,4 +242,18 @@ router.post('/:id/add-note', async (req, res) => {
     }
 });
 
+router.post('/adduser', async (req, res) => {
+  console.log("user add attempt")
+    try {
+        const dbUserData = await Todos.create({
+            name: req.body.name,
+            email: req.body.name,
+            password: req.body.password,
+        });
+        res.status(200).json("ok");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 module.exports = router;
