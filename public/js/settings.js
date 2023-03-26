@@ -74,3 +74,17 @@ async function saveTodo(event) {
     });
   }
   
+  async function updateTodo(todoId, updatedValues) {
+    const response = await fetch(`/api/todos/${todoId}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedValues),
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      alert('Todo updated successfully.');
+      fetchRecurringTodos();
+    } else {
+      alert('Failed to update todo.');
+    }
+  }
