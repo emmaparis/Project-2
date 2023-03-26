@@ -1,16 +1,13 @@
 const router = require('express').Router();
-const { Todo } = require('../../models');
+const { todo } = require('../models');
 
 // Fetch recurring to-do items
-router.get('/recurring', async (req, res) => {
+router.get('/api/todos/recurring', async (req, res) => {
     try {
-      const recurringTodos = await Todo.findAll({
+      const recurringTodos = await todo.findAll({
         where: {
-          user_id: req.session.user_id,
-          recurring: true,
+            isRecurring: true,
         },
-        attributes: ['id', 'description', 'due_date', 'expansion', 'day'],
-        order: [['due_date', 'ASC']],
       });
   
       res.status(200).json(recurringTodos);
@@ -20,9 +17,9 @@ router.get('/recurring', async (req, res) => {
   });
 
   // Edit a recurring to-do item
-router.put('/:id', async (req, res) => {
+router.put('/api/todos/recurring', async (req, res) => {
     try {
-      const updatedTodo = await Todo.update(req.body, {
+      const updatedTodo = await todo.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -35,9 +32,9 @@ router.put('/:id', async (req, res) => {
   });
 
   // Delete a recurring to-do item
-router.delete('/:id', async (req, res) => {
+router.delete('/api/todos/recurring', async (req, res) => {
     try {
-      const deletedTodo = await Todo.destroy({
+      const deletedTodo = await todo.destroy({
         where: {
           id: req.params.id,
         },

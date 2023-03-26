@@ -31,17 +31,23 @@ async function saveTodo(event) {
     }
   }
   async function fetchRecurringTodos() {
-    const response = await fetch('/api/todos/recurring', {
+    try {
+    const response = await fetch('/api/todos/recurring', 
+    {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
     });
   
     if (response.ok) {
       const todos = await response.json();
+      console.log('Fetched data:', todos); // Add this line to log the fetched data
       displayRecurringTodos(todos);
     } else {
       alert('Failed to fetch recurring todos.');
     }
+  } catch (error) {
+    console.error('Error:', error);
+  }
   }
   
   function displayRecurringTodos(todos) {
@@ -103,6 +109,9 @@ async function saveTodo(event) {
     }
   }
   
+  document.addEventListener('DOMContentLoaded', () => {
+
   document
     .getElementById('manage-recurring-todos')
     .addEventListener('click', fetchRecurringTodos);
+  });

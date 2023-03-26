@@ -35,9 +35,10 @@
       </div>
       {{!-- Add a section for managing recurring to-do items --}}
       <div class="field">
-        <button class="button is-link" id="manage-todos" type="button">Manage Recurring To-Do Items</button>
+        <button class="button is-link" id="manage-recurring-todos" type="button">Manage Recurring To-Do Items</button>
       </div>
       <div id="todo-management" style="display: none;">
+        <div id="recurring-todos-container"></div>
         {{!-- This section will be populated with recurring to-do items --}}
       </div>
       <div class="field is-grouped">
@@ -45,6 +46,7 @@
           <button class="button is-link" type="submit">Save Settings</button>
         </div>
       </div>
+              <script src="/js/settings.js"></script>
     </form>
   </div>
 </div>
