@@ -30,54 +30,47 @@ async function saveTodo(event) {
       }
     }
   }
-/*
-  // Fetch and display the user's recurring to-do items
-async function fetchTodos() {
-  const response = await fetch('/api/todos');
-  const todos = await response.json();
-
-  const todoManagement = document.querySelector('#todo-management');
-  todoManagement.innerHTML = '';
-  todos.forEach((todo) => {
-    const div = document.createElement('div');
-    div.className = 'todo-item';
-    div.innerHTML = `
-      <h3>${todo.todo_item}</h3>
-      <p>${todo.note}</p>
-      <button class="button is-danger" onclick="deleteTodo(${todo.id})">Delete</button>
-      <button class="button is-warning" onclick="updateTodo(${todo.id})">Update</button>
-    `;
-    todoManagement.appendChild(div);
-  });
-}
-  
-  // Delete a todo item
-  async function deleteTodo(id) {
-    const response = await fetch(`/api/todos/${id}`, {
-      method: 'DELETE',
+  async function fetchRecurringTodos() {
+    const response = await fetch('/api/todos/recurring', {
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
   
     if (response.ok) {
-      document.location.reload();
+      const todos = await response.json();
+      displayRecurringTodos(todos);
     } else {
-      alert('Failed to delete todo item.');
+      alert('Failed to fetch recurring todos.');
     }
   }
-  */
-  document.querySelector('#save-todo').addEventListener('click', saveTodo);
-  /*
-// Add event listeners for delete buttons
-document.querySelectorAll('.delete-btn').forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      const id = event.target.getAttribute('data-id');
-      deleteTodo(id);
-    });
-  });
   
-  // Add event listener for the "Manage Recurring To-Do Items" button
-document.querySelector('#manage-todos').addEventListener('click', () => {
-  fetchTodos();
-});
-
-*/
+  function displayRecurringTodos(todos) {
+    const recurringTodosContainer = document.getElementById('recurring-todos-container');
+    recurringTodosContainer.innerHTML = '';
+  
+    todos.forEach((todo) => {
+      const todoItem = document.createElement('div');
+      todoItem.innerHTML = `
+        <h3>${todo.title}</h3>
+        <button class="edit-todo" data-id="${todo.id}">Edit</button>
+        <button class="delete-todo" data-id="${todo.id}">Delete</button>
+      `;
+      recurringTodosContainer.appendChild(todoItem);
+    });
+  
+    document.querySelectorAll('.edit-todo').forEach((button) => {
+      button.addEventListener('click', () => {
+        const todoId = button.dataset.id;
+        // ... populate form with todo details
+        // ... display the form for editing
+      });
+    });
+  
+    document.querySelectorAll('.delete-todo').forEach((button) => {
+      button.addEventListener('click', () => {
+        const todoId = button.dataset.id;
+        deleteTodo(todoId);
+      });
+    });
+  }
+  
