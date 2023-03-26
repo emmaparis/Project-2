@@ -41,11 +41,11 @@ router.get('/', async (req, res) => {
       }
     }
 
-    const chartCHL = toDoData.map(item => item.todo_item).join('|');
+    const chartCHL = toDoData.map(item => item.todo_item).join('|'); // joins each to-do item on a | from the "toDoData" array of objects
     console.log('chartCHL', chartCHL)
-    const chartCHD = [];
-    for (let i = 0; i < toDoData.length; i++) {
-      chartCHD.push(100/toDoData.length);
+    const chartCHD = []; // creates a variable for chartCHD, an empty array to eventually be filled
+    for (let i = 0; i < toDoData.length; i++) { // for loop runs through each object and fills in the % found below using .push
+      chartCHD.push(100/toDoData.length); // the # of to do items (or objects in the toDoData array) divided into 100 will give the % of the pie chart that to-do takes up. 
     }
 
     res.render('home', {
