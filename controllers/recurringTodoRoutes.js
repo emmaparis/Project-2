@@ -3,7 +3,6 @@ const { Todos } = require('../models');
 
 // Fetch recurring to-do items
 router.get('/', async (req, res) => {
-    console.log("Get Route");
     try {
       const recurringTodos = await Todos.findAll({
         where: {

@@ -13,17 +13,9 @@ const router = express();
 router.engine('handlebars', exphbs({defaultLayout: 'main'}));
 router.set('view engine', 'handlebars');
 
-router.get('/api/test', (req, res) => {
-    res.json([
-        {
-          id: 1,
-          title: 'Test todo item',
-        },
-      ]);
-  });
 // API routes
 router.use('/recurring', recurringTodoRoutes);
-router.use('/api/todos', todoRoutes);
+// router.use('/api/todos', todoRoutes);
 
 // View routes
 router.use('/login', loginRoutes);

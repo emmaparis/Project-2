@@ -35,11 +35,9 @@ async function saveEdits(event) {
   }
   async function fetchRecurringTodos() {
     try {
-      console.log("Button clicked");
     const response = await fetch('/recurring', 
     {
       method: 'GET',
-      // headers: {'Content-Type': 'application/json'},
     });
   
     if (response.ok) {
