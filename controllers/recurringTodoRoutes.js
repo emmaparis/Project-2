@@ -17,8 +17,24 @@ router.get('/', async (req, res) => {
     }
   });
 
+router.get('/:id', async (req, res) => {
+console.log("Get Route");
+try {
+    const selectedTodo = await Todos.findAll({
+    where: {
+        isRecurring: true,
+        id: req.params.id,
+    },
+    });
+
+    res.status(200).json(selectedTodo);
+} catch (err) {
+    res.status(500).json(err);
+}
+});
+
   // Edit a recurring to-do item
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
       const updatedTodo = await Todos.update(req.body, {
         where: {

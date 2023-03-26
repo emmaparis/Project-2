@@ -1,15 +1,16 @@
 // Save the todo item and selected days
-async function saveTodo(event) {
-    const sunday = document.querySelector('#sunday-checkbox').checked;
-    const monday = document.querySelector('#monday-checkbox').checked;
-    const tuesday = document.querySelector('#tuesday-checkbox').checked;
-    const wednesday = document.querySelector('#wednesday-checkbox').checked;
-    const thursday = document.querySelector('#thursday-checkbox').checked;
-    const friday = document.querySelector('#friday-checkbox').checked;
-    const saturday = document.querySelector('#saturday-checkbox').checked;
+async function saveEdits(event) {
+    const sunday = document.querySelector('#sunday').checked;
+    const monday = document.querySelector('#monday').checked;
+    const tuesday = document.querySelector('#tuesday').checked;
+    const wednesday = document.querySelector('#wednesday').checked;
+    const thursday = document.querySelector('#thursday').checked;
+    const friday = document.querySelector('#friday').checked;
+    const saturday = document.querySelector('#saturday').checked;
   
     if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
-      const response = await fetch(`/update/${event.target.classList[4]}`, {
+      console.log(event.target);
+      const response = await fetch(`/recurring/${event.target.getAttribute("data-id")}`, {
         method: 'PUT',
         body: JSON.stringify({
           sunday,
@@ -68,8 +69,7 @@ async function saveTodo(event) {
     document.querySelectorAll('.edit-todo').forEach((button) => {
       button.addEventListener('click', () => {
         const todoId = button.dataset.id;
-        // ... populate form with todo details
-        // ... display the form for editing
+        editTodo(todoId);
       });
     });
   
@@ -81,8 +81,32 @@ async function saveTodo(event) {
     });
   }
   
+  async function editTodo(todoId) {
+    try {
+      console.log("Button clicked");
+    const response = await fetch(`/recurring/${todoId}`, 
+    {
+      method: 'GET',
+      // headers: {'Content-Type': 'application/json'},
+    });
+  
+    if (response.ok) {
+      const todos = await response.json();
+      console.log('Fetched data:', todos); // Add this line to log the fetched data
+      document.getElementById("save-button").setAttribute("data-id", todos[0].id);
+      if (todos[0].monday) {
+        document.getElementById("monday").checked = true;
+      }
+    } else {
+      alert('Failed to fetch todo data.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+  }
+
   async function updateTodo(todoId, updatedValues) {
-    const response = await fetch(`/api/todos/${todoId}`, {
+    const response = await fetch(`/recurring/update/${todoId}`, {
       method: 'PUT',
       body: JSON.stringify(updatedValues),
       headers: { 'Content-Type': 'application/json' },
@@ -115,4 +139,9 @@ async function saveTodo(event) {
   document
     .getElementById('manage-recurring-todos')
     .addEventListener('click', fetchRecurringTodos);
+
+  document
+    .getElementById('save-button')
+    .addEventListener('click', saveEdits);
   });
+

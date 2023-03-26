@@ -4,20 +4,14 @@
 <div class="columns">
   <div class="column is-full">
     <h1 class="title">Settings</h1>
+          <div class="field">
+        <button class="button is-link" id="manage-recurring-todos" type="button">Manage Recurring To-Do Items</button>
+      </div>
+      <div id="todo-management" style="display: block;">
+        <div id="recurring-todos-container"></div>
+        {{!-- This section will be populated with recurring to-do items --}}
+      </div>
     <form id="settings-form">
-      <div class="field">
-        <label class="label">To Do Item</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Enter to-do item" id="todo-item">
-        </div>
-      </div>
-      {{!-- Add the corresponding note input field --}}
-      <div class="field">
-        <label class="label">Note</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Enter a note (optional)" id="todo-note"></textarea>
-        </div>
-      </div>
 <div class="field">
         <label class="label">Days of the week</label>
         <div class="control">
@@ -29,21 +23,14 @@
             <label><input type="checkbox" id="thursday"> Thursday</label>
             <label><input type="checkbox" id="friday"> Friday</label>
             <label><input type="checkbox" id="saturday"> Saturday</label>
-            <label><input type="checkbox" id="everyday"> Everyday</label>
           </div>
         </div>
       </div>
       {{!-- Add a section for managing recurring to-do items --}}
-      <div class="field">
-        <button class="button is-link" id="manage-recurring-todos" type="button">Manage Recurring To-Do Items</button>
-      </div>
-      <div id="todo-management" style="display: block;">
-        <div id="recurring-todos-container"></div>
-        {{!-- This section will be populated with recurring to-do items --}}
-      </div>
+
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" type="submit">Save Settings</button>
+          <button class="button is-link" id="save-button" data-id="0" type="submit">Save Settings</button>
         </div>
       </div>
               <script src="/js/settings.js"></script>
