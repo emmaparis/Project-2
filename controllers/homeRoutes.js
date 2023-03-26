@@ -245,7 +245,7 @@ router.post('/:id/add-note', async (req, res) => {
 router.post('/adduser', async (req, res) => {
   console.log("user add attempt")
     try {
-        const dbUserData = await Todos.create({
+        const dbUserData = await User.create({
             name: req.body.name,
             email: req.body.name,
             password: req.body.password,
@@ -256,4 +256,5 @@ router.post('/adduser', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 module.exports = router;

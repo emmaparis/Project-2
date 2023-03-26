@@ -17,7 +17,7 @@ const createAccount = async (event) => {
         console.log('all input')
         if (password===passwordConfirmation ){
             console.log('all input')
-            const response = await fetch(`/add`, {
+            const response = await fetch(`/adduser`, {
               method: 'POST',
               body: JSON.stringify({ name, email, password }),
               headers: { 'Content-Type': 'application/json' },
@@ -25,7 +25,7 @@ const createAccount = async (event) => {
         
             if (response.ok) {
               console.log("ok");
-              ocument.location.replace('/')
+              document.location.replace('/')
             } else {
               alert('Failed to add user.');
           }}else{
