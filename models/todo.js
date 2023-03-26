@@ -62,6 +62,11 @@ Todos.init(
       allowNull: false,
       defaultValue: false,
     },
+    isRecurring: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    }
   },
   {
     sequelize,
