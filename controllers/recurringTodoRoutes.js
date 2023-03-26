@@ -18,3 +18,18 @@ router.get('/recurring', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  // Edit a recurring to-do item
+router.put('/:id', async (req, res) => {
+    try {
+      const updatedTodo = await Todo.update(req.body, {
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      res.status(200).json(updatedTodo);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
