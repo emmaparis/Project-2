@@ -9,6 +9,7 @@ async function saveEdits(event) {
     const saturday = document.querySelector('#saturday').checked;
   
     if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
+      const isRecurring = true;
       console.log(event.target);
       const response = await fetch(`/recurring/${event.target.getAttribute("data-id")}`, {
         method: 'PUT',
@@ -20,6 +21,7 @@ async function saveEdits(event) {
           thursday,
           friday,
           saturday,
+          isRecurring,
         }),
         headers: { 'Content-Type': 'application/json' },
       });
