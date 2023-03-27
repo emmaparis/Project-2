@@ -14,44 +14,54 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (response.ok) {
       const todos = await response.json();
       console.log('Fetched data:', todos); // Add this line to log the fetched data
-      let filteredList = [];
+      let currentMS = Date.now();
+      console.log(currentMS);
       let todayDate = new Date();
-      for (i = 0; i < todos.length; i++) {
-        let validDays = [];
-        if (todos[i].sunday) {
-          validDays.push(0);
-        }
-        if (todos[i].monday) {
-          validDays.push(1);
-        }
-        if (todos[i].tuesday) {
-          validDays.push(2);
-        }
-        if (todos[i].wednesday) {
-          validDays.push(3);
-        }
-        if (todos[i].thursday) {
-          validDays.push(4);
-        }
-        if (todos[i].friday) {
-          validDays.push(5);
-        }
-        if (todos[i].saturday) {
-          validDays.push(6);
-        }
-        let todayDay = todayDate.getDay();
-        if (validDays.includes(todayDay)) {
-          filteredList.push(todos[i])
-        }
-      } console.log(filteredList);
-      for (i = 0; i < filteredList.length; i++) {
-        const event = {
-          id: filteredList[i].todo_item,
-          title: filteredList[i].todo_item,
-          start: `${todayDate.getFullYear()}-${(todayDate.getMonth() +1).toString().padStart(2,"0")}-${todayDate.getDate()}`
-        }
-        events.push(event);
-      } console.log(events);
+      for (j = 0; j < 3; j++){
+        let filteredList = [];
+        for (i = 0; i < todos.length; i++) {
+          let validDays = [];
+          if (todos[i].sunday) {
+            validDays.push(0);
+          }
+          if (todos[i].monday) {
+            validDays.push(1);
+          }
+          if (todos[i].tuesday) {
+            validDays.push(2);
+          }
+          if (todos[i].wednesday) {
+            validDays.push(3);
+          }
+          if (todos[i].thursday) {
+            validDays.push(4);
+          }
+          if (todos[i].friday) {
+            validDays.push(5);
+          }
+          if (todos[i].saturday) {
+            validDays.push(6);
+          }
+          let todayDay = todayDate.getDay();
+          todayDay = todayDay + j;
+          if(todayDay >= 7) {
+            todayDay = todayDay-7;
+          }
+          if (validDays.includes(todayDay)) {
+            filteredList.push(todos[i])
+          }
+        } console.log(filteredList);
+        
+        let modifiedDate = new Date(currentMS + (24*60*60*1000*j));
+        for (i = 0; i < filteredList.length; i++) {
+          const event = {
+            id: filteredList[i].todo_item,
+            title: filteredList[i].todo_item,
+            start: `${modifiedDate.getFullYear()}-${(modifiedDate.getMonth() +1).toString().padStart(2,"0")}-${modifiedDate.getDate()}`
+          }
+          events.push(event);
+        } console.log(events);
+      }
     } else {
       alert('Failed to fetch recurring todos.');
     }
@@ -79,53 +89,3 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   calendar.render();
 });
-
-
-
-
-// const { Todos } = require("../../models");
-
-// document.addEventListener("DOMContentLoaded", function () {
-  // const calendarEl = document.getElementById("calendar");
-  // console.log(calendarEl);
-  // const calendar = new FullCalendar.Calendar(calendarEl, {
-  //   eventDidMount: function (info) {
-  //     const tooltip = document.createElement("div");
-  //     tooltip.textContent = "TESTING";
-  //     tooltip.setAttribute("role", "tooltip");
-  //     document.body.appendChild(tooltip);
-  //     console.log(info.el);
-  //     info.el.addEventListener("click", function (e) {
-  //       e.preventDefault();
-  //       const before = window.getComputedStyle(e.target, ":before");
-  //       before.innerHTML = "<h1>WOW COOL</h1>";
-  //       console.log(before);
-  //     });
-  //     Popper.createPopper(info.el, tooltip, {
-  //       placement: "left",
-  //     });
-    // },
-    
-//     editable: true,
-//     selectable: true,
-//     select: function () {
-//       alert("a day has been clicked!");
-//     },
-//     initialView: "dayGridWeek",
-//     events: [
-//       {
-//         id: "a",
-//         title: "my event",
-//         start: "2023-03-24",
-//       },
-//     ],
-//   });
-// console.log(toDos)
-//   calendar.addEvent({
-//     id: "a",
-//     title: "add event",
-//     start: "2023-03-25",
-//   });
-
-//   calendar.render();
-// });
