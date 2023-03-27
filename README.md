@@ -1,5 +1,7 @@
 # Project-2
 
+![LifeLog Logo](./public/images/life-log-logo.png)
+
 ## Description
 
 LifeLog was created to practice combining the skills covered thus far in boot camp to create a practical and convenient way to schedule your life. The motivation behind this project was simple: create an app that can do everything that existing schedule apps can't do already. We wanted to build something that would eliminate the need for multiple schedule tracking and note-taking apps. LifeLog allows users to create To Do lists within to do lists, view a calendar, and see how much of their day is taken up by each to do item all in one place. 
@@ -27,21 +29,33 @@ Happy logging!
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+To use LifeLog, login with your username and password or create an account if you don't already have one.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+![LifeLog sign in](./public/gifs/life-log-signin.gif)
 
-![alt text](assets/images/screenshot.png)
+When you are logged in, you will be directed to the homepage. In the leftmost section, you can enter new to-do items by typing in your item and pressing the + key to add it to the list. Check off items as they are completed! Remove them by clicking the trash can icon.
+
+You can click on items in "Today's To Dos" which will allow you to make a sub-list in the "Expansion" section.
+
+![Explansion section](./public/gifs/life-log-todos.gif)
+
+When you create to-do items, you can select how often you want them to populate your LifeLog by selecting the ![gear icon](./public/images/gear-icon.png) in the "Expansion" section.
+
+
+On the right, you will see how much of your day each to do item takes up. 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Contributors to LifeLog include:
+* [Emma Paris](https://github.com/emmaparis)
+* [David Keim](https://github.com/keimdm)
+* [Tatiana Castro](https://github.com/tatys5394)
+* [Shannya Niveyro](https://github.com/ShannyaN)
+* [Liza Parr](https://github.com/lparr30)
+* [Joseph Reis](https://github.com/JosephReis646)
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-If you followed tutorials, include links to those here as well.
+LifeLog also makes use of [Image Charts](https://documentation.image-charts.com/), an API that allowed us to implement a pie chart into our app. [FullCalendar](https://fullcalendar.io/docs) is a library we used to have a calendar appear on the homepage. Lastly, [Day.js](https://day.js.org/) enabled us to keep the current day displayed on the homepage. 
 
-## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
