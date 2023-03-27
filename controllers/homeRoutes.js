@@ -11,8 +11,12 @@ router.get('/', async (req, res) => {
       },
     });
     let toDoData = [];
+    const todayDay = new Date().getDay();
     for (i = 0; i < rawToDoData.length; i++) {
-      toDoData.push(rawToDoData[i].get({ plain: true }));
+      const todoSelected = rawToDoData[i];
+      if (todoSelected.getDays().length === 0 || rawToDoData[i].getDays().includes(todayDay)) {
+        toDoData.push(rawToDoData[i].get({ plain: true }));
+      }
     }
     console.log(toDoData);
     let hastoDos = false;
@@ -79,8 +83,12 @@ router.get('/:id', async (req, res) => {
       },
     });
     let toDoData = [];
+    const todayDay = new Date().getDay();
     for (i = 0; i < rawToDoData.length; i++) {
-      toDoData.push(rawToDoData[i].get({ plain: true }));
+      const todoSelected = rawToDoData[i];
+      if (todoSelected.getDays().length === 0 || rawToDoData[i].getDays().includes(todayDay)) {
+        toDoData.push(rawToDoData[i].get({ plain: true }));
+      }
     }
     console.log(toDoData);
     let hastoDos = false;

@@ -34,6 +34,7 @@ try {
 
   // Edit a recurring to-do item
 router.put('/:id', async (req, res) => {
+    console.log("put request");
     try {
       const updatedTodo = await Todos.update(req.body, {
         where: {
