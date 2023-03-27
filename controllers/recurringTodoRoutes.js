@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
       const recurringTodos = await Todos.findAll({
         where: {
             isRecurring: true,
+            user_id: req.session.userID,
         },
       });
   
