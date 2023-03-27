@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
       defaultID = toDoData[0].id;
     }
     else {
-      defaultID = 1;
+      defaultID = 0;
     }
     const currentToDo = await Todos.findByPk(defaultID) || 0;
     let noteData = [];
