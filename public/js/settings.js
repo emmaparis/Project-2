@@ -1,6 +1,5 @@
 // Save the todo item and selected days
 async function saveEdits(event) {
-    event.preventDefault();
     const sunday = document.querySelector('#sunday').checked;
     const monday = document.querySelector('#monday').checked;
     const tuesday = document.querySelector('#tuesday').checked;
