@@ -97,6 +97,13 @@ async function saveEdits(event) {
       if (todos.length > 0) {
         document.getElementById("day-container").setAttribute("style", "display: block;")
         document.getElementById("save-button").setAttribute("data-id", todos[0].id);
+        document.getElementById("sunday").checked = false;
+        document.getElementById("monday").checked = false;
+        document.getElementById("tuesday").checked = false;
+        document.getElementById("wednesday").checked = false;
+        document.getElementById("thursday").checked = false;
+        document.getElementById("friday").checked = false;
+        document.getElementById("saturday").checked = false;
         if (todos[0].sunday) {
           document.getElementById("sunday").checked = true;
         }
