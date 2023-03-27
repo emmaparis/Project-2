@@ -58,7 +58,7 @@ chl=10K€|40K€|45K€"/> --}}
               </div>
             <div class="column card ml-3">
                 <header class="card-header is-size-3" style=" background-color: #00d1b2; text-align: center;">
-                    <strong>Progress Tracker</strong> 
+                    <strong>The Day's Breakdown</strong> 
                 </header>
                   <div class="card-content">
                 <div class="content">
@@ -66,13 +66,14 @@ chl=10K€|40K€|45K€"/> --}}
                 <p class="is-size-3 has-text-centered"> <strong>Congratulations!</strong> <br> You're almost there!</p>
                  <figure class="image is-256x256 is-align-items-center is-flex-wrap-wrap">
                 {{!-- <img src="/images/koot.png" class= "is-rounded" /> --}}
+                {{!-- link for pie chart API below, broken into chart type, size, labels, data, font size --}}
                 <img src="https://image-charts.com/chart
 ?cht=pd
 &chs=600x600
 &chd=t:{{chartCHD}}
 &chl={{chartCHL}}
 &chlps=font.size,23
-&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1" alt="Pie Chart">
+&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1" alt="Pie Chart"> 
                   </figure>
                   {{!-- <button class="button is-primary is-size-5 is-fullwidth has-text-dark">View Past Progress</button> --}}
                 </div>

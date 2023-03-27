@@ -7,10 +7,16 @@ async function saveEdits(event) {
     const thursday = document.querySelector('#thursday').checked;
     const friday = document.querySelector('#friday').checked;
     const saturday = document.querySelector('#saturday').checked;
+
+    let isRecurring;
   
     if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
-      const isRecurring = true;
-      console.log(event.target);
+      isRecurring = true;   
+    }
+    else {
+      isRecurring = false;
+    }
+    console.log(event.target);
       const response = await fetch(`/recurring/${event.target.getAttribute("data-id")}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -31,7 +37,6 @@ async function saveEdits(event) {
       } else {
         alert('Failed to save todo item.');
       }
-    }
   }
   async function fetchRecurringTodos() {
     try {
@@ -96,6 +101,13 @@ async function saveEdits(event) {
       if (todos.length > 0) {
         document.getElementById("day-container").setAttribute("style", "display: block;")
         document.getElementById("save-button").setAttribute("data-id", todos[0].id);
+        document.getElementById("sunday").checked = false;
+        document.getElementById("monday").checked = false;
+        document.getElementById("tuesday").checked = false;
+        document.getElementById("wednesday").checked = false;
+        document.getElementById("thursday").checked = false;
+        document.getElementById("friday").checked = false;
+        document.getElementById("saturday").checked = false;
         if (todos[0].sunday) {
           document.getElementById("sunday").checked = true;
         }
@@ -157,13 +169,14 @@ async function saveEdits(event) {
   }
   
   document.addEventListener('DOMContentLoaded', () => {
+  });
+
+  document
+    .getElementById('save-button')
+    .addEventListener('click', saveEdits);
 
   document
     .getElementById('manage-recurring-todos')
     .addEventListener('click', fetchRecurringTodos);
 
-  document
-    .getElementById('save-button')
-    .addEventListener('click', saveEdits);
-  });
 
