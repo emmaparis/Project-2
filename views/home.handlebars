@@ -62,6 +62,7 @@ chl=10K€|40K€|45K€"/> --}}
                 </header>
                   <div class="card-content">
                 <div class="content">
+                <div id="calendar"></div>
                 <p class="is-size-3 has-text-centered"> <strong>Congratulations!</strong> <br> You're almost there!</p>
                  <figure class="image is-256x256 is-align-items-center is-flex-wrap-wrap">
                 {{!-- <img src="/images/koot.png" class= "is-rounded" /> --}}
@@ -78,8 +79,23 @@ chl=10K€|40K€|45K€"/> --}}
             </div>
             </div>
           </div>
+
+   <script>
+            const toDos = [
+            {{#each toDoData as |todo|}}
+            {
+              id: {{todo.id}},
+              item: "{{todo.todo_item}}"
+            },
+            {{/each}}
+            ]
+          </script>
+
 <script src="/js/createTodo.js"></script>
   <script src="/js/createNote.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+   <script src="/js/popper.min.js"></script>
+   <script src='/js/calendar.js'></script>
 {{else}}
      <section class="columns card has-background-primary-light m-5 p-5 ">
       <div class="column is-one-third ">
