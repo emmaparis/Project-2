@@ -1,7 +1,33 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Todos extends Model {}
+class Todos extends Model {
+  getDays() {
+    let validDays = [];
+    if (this.sunday) {
+      validDays.push(0);
+    }
+    if (this.monday) {
+      validDays.push(1);
+    }
+    if (this.tuesday) {
+      validDays.push(2);
+    }
+    if (this.wednesday) {
+      validDays.push(3);
+    }
+    if (this.thursday) {
+      validDays.push(4);
+    }
+    if (this.friday) {
+      validDays.push(5);
+    }
+    if (this.saturday) {
+      validDays.push(6);
+    }
+    return validDays;
+  }
+}
 
 Todos.init(
   {
@@ -62,6 +88,11 @@ Todos.init(
       allowNull: false,
       defaultValue: false,
     },
+    isRecurring: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    }
   },
   {
     sequelize,

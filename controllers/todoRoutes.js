@@ -1,10 +1,9 @@
 // routes/api/todoRoutes.js
 const router = require('express').Router();
-const { Todos } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Todos } = require('../models');
 
 // Create a new todo item
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newTodo = await Todos.create({
       ...req.body,
@@ -18,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Delete a todo item
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const todoData = await Todos.destroy({
       where: {
