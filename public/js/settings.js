@@ -1,5 +1,6 @@
 // Save the todo item and selected days
 async function saveEdits(event) {
+    event.preventDefault();
     const sunday = document.querySelector('#sunday').checked;
     const monday = document.querySelector('#monday').checked;
     const tuesday = document.querySelector('#tuesday').checked;
@@ -9,6 +10,7 @@ async function saveEdits(event) {
     const saturday = document.querySelector('#saturday').checked;
   
     if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
+      console.log("put route");
       const isRecurring = true;
       console.log(event.target);
       const response = await fetch(`/recurring/${event.target.getAttribute("data-id")}`, {
@@ -157,13 +159,14 @@ async function saveEdits(event) {
   }
   
   document.addEventListener('DOMContentLoaded', () => {
+  });
+
+  document
+    .getElementById('save-button')
+    .addEventListener('click', saveEdits);
 
   document
     .getElementById('manage-recurring-todos')
     .addEventListener('click', fetchRecurringTodos);
 
-  document
-    .getElementById('save-button')
-    .addEventListener('click', saveEdits);
-  });
 
