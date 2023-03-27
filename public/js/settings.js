@@ -7,11 +7,16 @@ async function saveEdits(event) {
     const thursday = document.querySelector('#thursday').checked;
     const friday = document.querySelector('#friday').checked;
     const saturday = document.querySelector('#saturday').checked;
+
+    let isRecurring;
   
     if ((sunday || monday || tuesday || wednesday || thursday || friday || saturday)) {
-      console.log("put route");
-      const isRecurring = true;
-      console.log(event.target);
+      isRecurring = true;   
+    }
+    else {
+      isRecurring = false;
+    }
+    console.log(event.target);
       const response = await fetch(`/recurring/${event.target.getAttribute("data-id")}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -32,7 +37,6 @@ async function saveEdits(event) {
       } else {
         alert('Failed to save todo item.');
       }
-    }
   }
   async function fetchRecurringTodos() {
     try {
