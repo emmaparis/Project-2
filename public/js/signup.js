@@ -16,20 +16,19 @@ const createAccount = async (event) => {
     if (name && email && password && passwordConfirmation) {
         console.log('all input')
         if (password===passwordConfirmation ){
-        //     console.log('all input')
-        //     const response = await fetch(`/add`, {
-        //       method: 'POST',
-        //       body: JSON.stringify({ name, email, password }),
-        //       headers: { 'Content-Type': 'application/json' },
-        //     });
+            console.log('all input')
+            const response = await fetch(`/adduser`, {
+              method: 'POST',
+              body: JSON.stringify({ name, email, password }),
+              headers: { 'Content-Type': 'application/json' },
+            });
         
-        //     if (response.ok) {
-        //       console.log("ok");
-        //       document.location.reload();
-        //     } else {
-        //       alert('Failed to add user.');
-        //     // }
-        //   }else {
+            if (response.ok) {
+              console.log("ok");
+              document.location.replace('/')
+            } else {
+              alert('Failed to add user.');
+          }}else{
             document.querySelector("#pwErr").textContent = "Passwords do not match. Try again."
         }
     } else {
